@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moutasem Mahmoud El-shimey </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+ 
+<!-- Custom Cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+ 
+<!-- Particles -->
+<canvas id="particles-canvas"></canvas>
+ 
+<!-- Nav -->
+<nav id="navbar">
+  <a href="#" class="nav-logo"><span>//</span> M.Shimey</a>
+  <ul class="nav-links">
+    <li><a href="#about" data-en="About" data-ar="عني">About</a></li>
+    <li><a href="#skills" data-en="Skills" data-ar="مهاراتي">Skills</a></li>
+    <li><a href="#projects" data-en="Projects" data-ar="مشاريعي">Projects</a></li>
+    <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <button class="nav-lang" onclick="toggleLang()" id="langBtn">AR</button>
+    <div class="hamburger" onclick="openMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+ 
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#about" onclick="closeMenu()" data-en="About" data-ar="عني">About</a>
+  <a href="#skills" onclick="closeMenu()" data-en="Skills" data-ar="مهاراتي">Skills</a>
+  <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ar="مشاريعي">Projects</a>
+  <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ar="تواصل">Contact</a>
+</div>
+ 
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+ 
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span data-en="Full Stack Developer · Egypt" data-ar="مطور فول ستاك · مصر">Full Stack Developer · Egypt</span>
+    </div>
+    <h1 class="hero-name">
+      Moutasem
+      <span class="line2 shimmer">El-Shimey</span>
+    </h1>
+    <div class="hero-title">
+      <span class="typing" id="typingEl">&gt; Angular + Node.js Developer_</span>
+    </div>
+    <p class="hero-desc" data-en="Building sleek, high-performance web applications with cutting-edge frontend & backend technologies. Turning complex problems into elegant digital solutions." data-ar="أبني تطبيقات ويب احترافية وعالية الأداء باستخدام أحدث تقنيات الفرونت اند والباك اند. أحوّل المشكلات المعقدة إلى حلول رقمية أنيقة.">
+      Building sleek, high-performance web applications with cutting-edge frontend & backend technologies. Turning complex problems into elegant digital solutions.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary"><span data-en="View My Work" data-ar="شوف أعمالي">View My Work</span></a>
+      <a href="#contact" class="btn-ghost" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</a>
+    </div>
+  </div>
+ 
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">2+</div>
+      <div class="stat-label" data-en="Years Exp." data-ar="سنوات خبرة">Years Exp.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15+</div>
+      <div class="stat-label" data-en="Projects Done" data-ar="مشروع منجز">Projects Done</div>
+    </div>
+  </div>
+ 
+  <div class="hero-scroll">
+    <span data-en="Scroll" data-ar="اسحب">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+ 
+<!-- About -->
+<section id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title" data-en="About Me" data-ar="من أنا">About Me</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-img-wrap reveal reveal-delay-1">
+      <div class="about-img-frame">
+        <img src="https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?w=600&q=80&fit=crop" alt="Moutasem El-Shimey" />
+      </div>
+      <div class="about-img-decor"></div>
+      <div class="about-img-decor2"></div>
+    </div>
+    <div class="about-text reveal reveal-delay-2">
+      <p data-en="Hey! I'm <strong>Moutasem El-Shimey</strong>, a passionate Full Stack Developer based in Egypt. I specialize in building modern web applications using <strong>Angular</strong> on the frontend and <strong>Node.js</strong> on the backend." data-ar="أهلاً! أنا <strong>معتصم الشيمي</strong>، مطور فول ستاك متحمس من مصر. متخصص في بناء تطبيقات الويب الحديثة باستخدام <strong>Angular</strong> في الفرونت اند و<strong>Node.js</strong> في الباك اند.">
+        Hey! I'm <strong>Moutasem El-Shimey</strong>, a passionate Full Stack Developer based in Egypt. I specialize in building modern web applications using <strong>Angular</strong> on the frontend and <strong>Node.js</strong> on the backend.
+      </p>
+      <p data-en="I love crafting beautiful, responsive, and performant user interfaces. Whether it's architecting a scalable backend API or creating pixel-perfect UIs, I bring the same obsession for quality to every layer of the stack." data-ar="أحب إنشاء واجهات مستخدم جميلة وسريعة الاستجابة. سواء كان ذلك في بناء API متقني الأداء أو تصميم واجهات دقيقة الجمال، أحمل نفس الشغف للجودة في كل طبقة.">
+        I love crafting beautiful, responsive, and performant user interfaces. Whether it's architecting a scalable backend API or creating pixel-perfect UIs, I bring the same obsession for quality to every layer of the stack.
+      </p>
+      <div class="about-info">
+        <div class="info-item">
+          <span class="info-label">Name</span>
+          <span class="info-val">Moutasem El-Shimey</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Location</span>
+          <span class="info-val">Egypt 🇪🇬</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Phone</span>
+          <span class="info-val">01141179106</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Status</span>
+          <span class="info-val" style="color:var(--accent)">● Open to Work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Skills -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title" data-en="My Skills" data-ar="مهاراتي">My Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+ 
+    <div class="skill-card reveal reveal-delay-1">
+      <span class="skill-icon">⚡</span>
+      <div class="skill-name" data-en="Frontend" data-ar="الفرونت اند">Frontend</div>
+      <div class="skill-desc" data-en="Building reactive, scalable SPAs with Angular & modern web standards." data-ar="بناء تطبيقات Angular تفاعلية وقابلة للتوسع.">Building reactive, scalable SPAs with Angular & modern web standards.</div>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">Angular</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
+          <span class="skill-bar-pct">90%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">TypeScript</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+          <span class="skill-bar-pct">85%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">HTML/CSS</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="95"></div></div>
+          <span class="skill-bar-pct">95%</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="skill-card reveal reveal-delay-2">
+      <span class="skill-icon">🔧</span>
+      <div class="skill-name" data-en="Backend" data-ar="الباك اند">Backend</div>
+      <div class="skill-desc" data-en="Creating robust REST APIs and server-side logic with Node.js & Express." data-ar="بناء APIs قوية ومنطق الخادم بـ Node.js و Express.">Creating robust REST APIs and server-side logic with Node.js & Express.</div>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">Node.js</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
+          <span class="skill-bar-pct">88%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">Express</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+          <span class="skill-bar-pct">85%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">REST APIs</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
+          <span class="skill-bar-pct">90%</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="skill-card reveal reveal-delay-3">
+      <span class="skill-icon">🗄️</span>
+      <div class="skill-name" data-en="Database" data-ar="قواعد البيانات">Database</div>
+      <div class="skill-desc" data-en="Designing efficient data models with both SQL and NoSQL databases." data-ar="تصميم نماذج بيانات فعالة مع قواعد بيانات SQL و NoSQL.">Designing efficient data models with both SQL and NoSQL databases.</div>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">MongoDB</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="82"></div></div>
+          <span class="skill-bar-pct">82%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">MySQL</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="75"></div></div>
+          <span class="skill-bar-pct">75%</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="skill-card reveal reveal-delay-4">
+      <span class="skill-icon">🎨</span>
+      <div class="skill-name" data-en="UI/UX & Tools" data-ar="الأدوات والتصميم">UI/UX & Tools</div>
+      <div class="skill-desc" data-en="Crafting beautiful interfaces and using industry-standard dev tools." data-ar="تصميم واجهات جميلة واستخدام أدوات التطوير الاحترافية.">Crafting beautiful interfaces and using industry-standard dev tools.</div>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">Git</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
+          <span class="skill-bar-pct">88%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">Figma</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="70"></div></div>
+          <span class="skill-bar-pct">70%</span>
+        </div>
+        <div class="skill-bar-item">
+          <span class="skill-bar-label">Tailwind</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
+          <span class="skill-bar-pct">80%</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- Projects -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title" data-en="My Projects" data-ar="مشاريعي">My Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+ 
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-thumb">
+        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80&fit=crop" alt="E-Commerce App" />
+        <div class="project-thumb-overlay"></div>
+        <span class="project-tag">Full Stack</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title" data-en="E-Commerce Platform" data-ar="منصة تجارة إلكترونية">E-Commerce Platform</div>
+        <div class="project-desc" data-en="Full-featured online store with product management, cart, authentication and payment integration built with Angular & Node.js." data-ar="متجر إلكتروني متكامل مع إدارة المنتجات والعربة والمصادقة ودمج الدفع.">Full-featured online store with product management, cart, authentication and payment integration built with Angular & Node.js.</div>
+        <div class="project-tech">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">JWT</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo →</a>
+          <a href="#" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="project-card reveal reveal-delay-2">
+      <div class="project-thumb">
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80&fit=crop" alt="Dashboard App" />
+        <div class="project-thumb-overlay"></div>
+        <span class="project-tag">Frontend</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title" data-en="Analytics Dashboard" data-ar="لوحة تحكم تحليلية">Analytics Dashboard</div>
+        <div class="project-desc" data-en="Real-time data visualization dashboard with charts, KPIs, and dynamic reporting built with Angular and D3.js." data-ar="لوحة تحكم لعرض البيانات في الوقت الحقيقي مع رسوم بيانية ومؤشرات أداء.">Real-time data visualization dashboard with charts, KPIs, and dynamic reporting built with Angular and D3.js.</div>
+        <div class="project-tech">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">D3.js</span>
+          <span class="tech-badge">TypeScript</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo →</a>
+          <a href="#" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="project-card reveal reveal-delay-3">
+      <div class="project-thumb">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="Task Manager" />
+        <div class="project-thumb-overlay"></div>
+        <span class="project-tag">Full Stack</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title" data-en="Task Management System" data-ar="نظام إدارة المهام">Task Management System</div>
+        <div class="project-desc" data-en="Collaborative project management tool with drag-and-drop, real-time updates and team collaboration features." data-ar="أداة إدارة مشاريع تعاونية مع سحب وإفلات وتحديثات فورية وميزات التعاون الجماعي.">Collaborative project management tool with drag-and-drop, real-time updates and team collaboration features.</div>
+        <div class="project-tech">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Socket.io</span>
+          <span class="tech-badge">PostgreSQL</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo →</a>
+          <a href="#" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- Contact -->
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal reveal-delay-1">
+      <h3 data-en="Let's build something great together." data-ar="هنبني حاجة عظيمة مع بعض.">Let's build something great together.</h3>
+      <p data-en="I'm always open to new opportunities, collaborations, and interesting projects. Whether you have a project in mind or just want to connect, my inbox is always open." data-ar="دايمًا مفتوح لفرص جديدة وتعاونات ومشاريع مثيرة. سواء عندك مشروع أو عايز تتواصل بس، أنا هنا.">
+        I'm always open to new opportunities, collaborations, and interesting projects. Whether you have a project in mind or just want to connect, my inbox is always open.
+      </p>
+      <div class="contact-links">
+        <a href="tel:+201141179106" class="contact-link">
+          <span class="contact-link-icon">📞</span>
+          <div class="contact-link-info">
+            <span class="contact-link-label">Phone</span>
+            <span class="contact-link-val">+20 114 117 9106</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🌐</span>
+          <div class="contact-link-info">
+            <span class="contact-link-label">Facebook</span>
+            <span class="contact-link-val">moutasem.mahmoud.el.shimey</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="contact-link">
+          <span class="contact-link-icon">💼</span>
+          <div class="contact-link-info">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-val">moutasem-mahmoud-278a84338</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-delay-2">
+      <div class="form-group">
+        <label data-en="YOUR NAME" data-ar="اسمك">YOUR NAME</label>
+        <input type="text" placeholder="John Doe" data-placeholder-en="John Doe" data-placeholder-ar="اكتب اسمك" />
+      </div>
+      <div class="form-group">
+        <label data-en="YOUR EMAIL" data-ar="إيميلك">YOUR EMAIL</label>
+        <input type="email" placeholder="john@example.com" data-placeholder-en="john@example.com" data-placeholder-ar="اكتب إيميلك" />
+      </div>
+      <div class="form-group">
+        <label data-en="MESSAGE" data-ar="رسالتك">MESSAGE</label>
+        <textarea placeholder="Tell me about your project..." data-placeholder-en="Tell me about your project..." data-placeholder-ar="اكتب رسالتك هنا..."></textarea>
+      </div>
+      <a href="#" class="btn-primary" style="text-align:center;display:block;">
+        <span data-en="Send Message →" data-ar="إرسال الرسالة →">Send Message →</span>
+      </a>
+    </div>
+  </div>
+</section>
+ 
+<!-- Footer -->
+<footer>
+  <div class="footer-text">
+    © 2025 <span>Moutasem El-Shimey</span>. Built with ❤️ &amp; lots of ☕
+  </div>
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="social-btn" title="Facebook">f</a>
+    <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="social-btn" title="LinkedIn">in</a>
+    <a href="tel:+201141179106" class="social-btn" title="Phone">📞</a>
+  </div>
+</footer>
+ 
+<script src="./index.js"></script>
+</body>
+</html>
