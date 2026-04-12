@@ -31,364 +31,487 @@
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
  
-<!-- Particles -->
-<canvas id="particles-canvas"></canvas>
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-name" id="loader-name">MM</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+  <div class="loader-percent" id="loader-percent">0%</div>
+</div>
  
-<!-- Nav -->
+<!-- Canvas Background -->
+<canvas id="bg-canvas"></canvas>
+ 
+<!-- Navigation -->
 <nav id="navbar">
-  <a href="#" class="nav-logo"><span>//</span> M.Shimey</a>
-  <ul class="nav-links">
-    <li><a href="#about" data-en="About" data-ar="عني">About</a></li>
-    <li><a href="#skills" data-en="Skills" data-ar="مهاراتي">Skills</a></li>
-    <li><a href="#projects" data-en="Projects" data-ar="مشاريعي">Projects</a></li>
-    <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+  <div class="nav-logo">MM.</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about" class="nav-link" data-en="About" data-ar="عني">About</a></li>
+    <li><a href="#skills" class="nav-link" data-en="Skills" data-ar="المهارات">Skills</a></li>
+    <li><a href="#experience" class="nav-link" data-en="Experience" data-ar="الخبرة">Experience</a></li>
+    <li><a href="#projects" class="nav-link" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+    <li><a href="#certificates" class="nav-link" data-en="Certs" data-ar="الشهادات">Certs</a></li>
+    <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">Contact</a></li>
   </ul>
-  <div style="display:flex;gap:12px;align-items:center;">
-    <button class="nav-lang" onclick="toggleLang()" id="langBtn">AR</button>
-    <div class="hamburger" onclick="openMenu()">
+  <div class="nav-controls">
+    <button class="ctrl-btn lang-btn" id="lang-toggle" title="Switch Language">عربي</button>
+    <button class="ctrl-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </nav>
  
 <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="closeMenu()">✕</button>
-  <a href="#about" onclick="closeMenu()" data-en="About" data-ar="عني">About</a>
-  <a href="#skills" onclick="closeMenu()" data-en="Skills" data-ar="مهاراتي">Skills</a>
-  <a href="#projects" onclick="closeMenu()" data-en="Projects" data-ar="مشاريعي">Projects</a>
-  <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ar="تواصل">Contact</a>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="mobile-link" data-en="About" data-ar="عني">About</a>
+  <a href="#skills" class="mobile-link" data-en="Skills" data-ar="المهارات">Skills</a>
+  <a href="#experience" class="mobile-link" data-en="Experience" data-ar="الخبرة">Experience</a>
+  <a href="#projects" class="mobile-link" data-en="Projects" data-ar="المشاريع">Projects</a>
+  <a href="#certificates" class="mobile-link" data-en="Certs" data-ar="الشهادات">Certs</a>
+  <a href="#contact" class="mobile-link" data-en="Contact" data-ar="تواصل">Contact</a>
 </div>
  
-<!-- Hero -->
+<!-- ===================== HERO ===================== -->
 <section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow-1"></div>
-  <div class="hero-glow-2"></div>
- 
-  <div class="hero-content">
-    <div class="hero-tag">
-      <span data-en="Full Stack Developer · Egypt" data-ar="مطور فول ستاك · مصر">Full Stack Developer · Egypt</span>
-    </div>
-    <h1 class="hero-name">
-      Moutasem
-      <span class="line2 shimmer">El-Shimey</span>
-    </h1>
-    <div class="hero-title">
-      <span class="typing" id="typingEl">&gt; Angular + Node.js Developer_</span>
-    </div>
-    <p class="hero-desc" data-en="Building sleek, high-performance web applications with cutting-edge frontend & backend technologies. Turning complex problems into elegant digital solutions." data-ar="أبني تطبيقات ويب احترافية وعالية الأداء باستخدام أحدث تقنيات الفرونت اند والباك اند. أحوّل المشكلات المعقدة إلى حلول رقمية أنيقة.">
-      Building sleek, high-performance web applications with cutting-edge frontend & backend technologies. Turning complex problems into elegant digital solutions.
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-primary"><span data-en="View My Work" data-ar="شوف أعمالي">View My Work</span></a>
-      <a href="#contact" class="btn-ghost" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</a>
-    </div>
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    <span data-en="Available for opportunities" data-ar="متاح للفرص الوظيفية">Available for opportunities</span>
   </div>
- 
+  <h1 class="hero-name">
+    <span class="word1" data-en="Moutasem " data-ar="معتصم ">Moutasem </span><br>
+    <span class="word2" data-en="Mahmoud" data-ar="محمود">Mahmoud</span>
+  </h1>
+  <p class="hero-role">
+    <span data-en="Full Stack " data-ar="مهندس ">Full Stack </span><span class="typed-text" id="typed"></span><span class="cursor-blink"></span>
+  </p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">
+      <span data-en="View My Work" data-ar="عرض أعمالي">View My Work</span> →
+    </a>
+    <a href="#contact" class="btn btn-ghost">
+      <span data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</span>
+    </a>
+  </div>
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-num">2+</div>
-      <div class="stat-label" data-en="Years Exp." data-ar="سنوات خبرة">Years Exp.</div>
+      <div class="stat-num">1+</div>
+      <div class="stat-label" data-en="Year Experience" data-ar="سنة خبرة">Year Experience</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">15+</div>
-      <div class="stat-label" data-en="Projects Done" data-ar="مشروع منجز">Projects Done</div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label" data-en="Projects Built" data-ar="مشروع منجز">Projects Built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label" data-en="Certifications" data-ar="شهادات معتمدة">Certifications</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">🥉</div>
+      <div class="stat-label" data-en="Automation Award" data-ar="جائزة الأتمتة">Automation Award</div>
     </div>
   </div>
- 
   <div class="hero-scroll">
-    <span data-en="Scroll" data-ar="اسحب">Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
  
-<!-- About -->
+<!-- ===================== ABOUT ===================== -->
 <section id="about">
-  <div class="section-header reveal">
-    <span class="section-num">01</span>
-    <h2 class="section-title" data-en="About Me" data-ar="من أنا">About Me</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-grid">
-    <div class="about-img-wrap reveal reveal-delay-1">
-      <div class="about-img-frame">
-        <img src="https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?w=600&q=80&fit=crop" alt="Moutasem El-Shimey" />
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          <div class="about-avatar"><img src="./image/WhatsApp Image 2025-06-24 at 18.01.17_36b8af38.jpg" alt="moutasem"></div>
+        </div>
+        <div class="about-badge about-badge-1">
+          <div class="badge-icon">🏢</div>
+          <div class="badge-val" data-en="Sieraj Co." data-ar="شركة سراج">Sieraj Co.</div>
+          <div class="badge-sub" data-en="Current Employer" data-ar="جهة العمل">Current Employer</div>
+        </div>
+        <div class="about-badge about-badge-2">
+          <div class="badge-icon">📍</div>
+          <div class="badge-val" data-en="Egypt" data-ar="مصر">Egypt</div>
+          <div class="badge-sub" data-en="Cairo, Maadi" data-ar="القاهرة، المعادي">Cairo, Maadi</div>
+        </div>
       </div>
-      <div class="about-img-decor"></div>
-      <div class="about-img-decor2"></div>
-    </div>
-    <div class="about-text reveal reveal-delay-2">
-      <p data-en="Hey! I'm <strong>Moutasem El-Shimey</strong>, a passionate Full Stack Developer based in Egypt. I specialize in building modern web applications using <strong>Angular</strong> on the frontend and <strong>Node.js</strong> on the backend." data-ar="أهلاً! أنا <strong>معتصم الشيمي</strong>، مطور فول ستاك متحمس من مصر. متخصص في بناء تطبيقات الويب الحديثة باستخدام <strong>Angular</strong> في الفرونت اند و<strong>Node.js</strong> في الباك اند.">
-        Hey! I'm <strong>Moutasem El-Shimey</strong>, a passionate Full Stack Developer based in Egypt. I specialize in building modern web applications using <strong>Angular</strong> on the frontend and <strong>Node.js</strong> on the backend.
-      </p>
-      <p data-en="I love crafting beautiful, responsive, and performant user interfaces. Whether it's architecting a scalable backend API or creating pixel-perfect UIs, I bring the same obsession for quality to every layer of the stack." data-ar="أحب إنشاء واجهات مستخدم جميلة وسريعة الاستجابة. سواء كان ذلك في بناء API متقني الأداء أو تصميم واجهات دقيقة الجمال، أحمل نفس الشغف للجودة في كل طبقة.">
-        I love crafting beautiful, responsive, and performant user interfaces. Whether it's architecting a scalable backend API or creating pixel-perfect UIs, I bring the same obsession for quality to every layer of the stack.
-      </p>
-      <div class="about-info">
-        <div class="info-item">
-          <span class="info-label">Name</span>
-          <span class="info-val">Moutasem El-Shimey</span>
+      <div class="about-content reveal">
+        <div class="section-header">
+          <div class="section-tag" data-en="About Me" data-ar="عني">About Me</div>
+          <h2 class="section-title" data-en="Crafting <span>Digital</span> Experiences" data-ar="أصنع تجارب <span>رقمية</span> متميزة">Crafting <span>Digital</span> Experiences</h2>
+          <p class="section-desc" data-en="A passionate Full Stack Engineer from Egypt with hands-on experience building real-world products. Currently working at Sieraj Software Company in Cairo, where I collaborate with development teams on production-grade applications." data-ar="مهندس برمجيات شغوف من مصر لديه خبرة عملية في بناء منتجات حقيقية. أعمل حالياً في شركة سراج للبرمجيات بالقاهرة، حيث أتعاون مع فرق التطوير على تطبيقات على مستوى الإنتاج.">A passionate Full Stack Engineer from Egypt with hands-on experience building real-world products. Currently working at Sieraj Software Company in Cairo, where I collaborate with development teams on production-grade applications.</p>
         </div>
-        <div class="info-item">
-          <span class="info-label">Location</span>
-          <span class="info-val">Egypt 🇪🇬</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Phone</span>
-          <span class="info-val">01141179106</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Status</span>
-          <span class="info-val" style="color:var(--accent)">● Open to Work</span>
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-label" data-en="Age" data-ar="العمر">Age</div>
+            <div class="info-val">23</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" data-en="Country" data-ar="الدولة">Country</div>
+            <div class="info-val" data-en="Egypt 🇪🇬" data-ar="مصر 🇪🇬">Egypt 🇪🇬</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" data-en="University" data-ar="الجامعة">University</div>
+            <div class="info-val" data-en="El Shorouk Academy" data-ar="أكاديمية الشروق">El Shorouk Academy</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" data-en="Major" data-ar="التخصص">Major</div>
+            <div class="info-val" data-en="Information Systems" data-ar="نظم المعلومات">Information Systems</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" data-en="Graduation" data-ar="التخرج">Graduation</div>
+            <div class="info-val">2025/2026</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" data-en="English" data-ar="اللغة الإنجليزية">English</div>
+            <div class="info-val" data-en="Intermediate" data-ar="متوسط">Intermediate</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
  
-<!-- Skills -->
+<!-- ===================== SKILLS ===================== -->
 <section id="skills">
-  <div class="section-header reveal">
-    <span class="section-num">02</span>
-    <h2 class="section-title" data-en="My Skills" data-ar="مهاراتي">My Skills</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="skills-grid">
- 
-    <div class="skill-card reveal reveal-delay-1">
-      <span class="skill-icon">⚡</span>
-      <div class="skill-name" data-en="Frontend" data-ar="الفرونت اند">Frontend</div>
-      <div class="skill-desc" data-en="Building reactive, scalable SPAs with Angular & modern web standards." data-ar="بناء تطبيقات Angular تفاعلية وقابلة للتوسع.">Building reactive, scalable SPAs with Angular & modern web standards.</div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <span class="skill-bar-label">Angular</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
-          <span class="skill-bar-pct">90%</span>
-        </div>
-        <div class="skill-bar-item">
-          <span class="skill-bar-label">TypeScript</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
-          <span class="skill-bar-pct">85%</span>
-        </div>
-        <div class="skill-bar-item">
-          <span class="skill-bar-label">HTML/CSS</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="95"></div></div>
-          <span class="skill-bar-pct">95%</span>
-        </div>
-      </div>
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Skills" data-ar="المهارات">Skills</div>
+      <h2 class="section-title" data-en="My <span>Tech Stack</span>" data-ar="مجموعة <span>تقنياتي</span>">My <span>Tech Stack</span></h2>
+      <p class="section-desc" data-en="A comprehensive toolkit covering both frontend and backend development." data-ar="مجموعة أدوات شاملة تغطي تطوير الواجهة الأمامية والخلفية.">A comprehensive toolkit covering both frontend and backend development.</p>
     </div>
- 
-    <div class="skill-card reveal reveal-delay-2">
-      <span class="skill-icon">🔧</span>
-      <div class="skill-name" data-en="Backend" data-ar="الباك اند">Backend</div>
-      <div class="skill-desc" data-en="Creating robust REST APIs and server-side logic with Node.js & Express." data-ar="بناء APIs قوية ومنطق الخادم بـ Node.js و Express.">Creating robust REST APIs and server-side logic with Node.js & Express.</div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <span class="skill-bar-label">Node.js</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
-          <span class="skill-bar-pct">88%</span>
+    <div class="skills-grid">
+      <div class="reveal">
+        <div class="skill-category-title">
+          <div class="cat-icon">🎨</div>
+          <span data-en="Frontend Development" data-ar="تطوير الواجهة الأمامية">Frontend Development</span>
         </div>
         <div class="skill-bar-item">
-          <span class="skill-bar-label">Express</span>
+          <div class="skill-bar-top"><span class="skill-bar-name">Angular</span><span class="skill-bar-pct">85%</span></div>
           <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
-          <span class="skill-bar-pct">85%</span>
         </div>
         <div class="skill-bar-item">
-          <span class="skill-bar-label">REST APIs</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
-          <span class="skill-bar-pct">90%</span>
+          <div class="skill-bar-top"><span class="skill-bar-name">HTML / CSS</span><span class="skill-bar-pct">92%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="92"></div></div>
         </div>
-      </div>
-    </div>
- 
-    <div class="skill-card reveal reveal-delay-3">
-      <span class="skill-icon">🗄️</span>
-      <div class="skill-name" data-en="Database" data-ar="قواعد البيانات">Database</div>
-      <div class="skill-desc" data-en="Designing efficient data models with both SQL and NoSQL databases." data-ar="تصميم نماذج بيانات فعالة مع قواعد بيانات SQL و NoSQL.">Designing efficient data models with both SQL and NoSQL databases.</div>
-      <div class="skill-bars">
         <div class="skill-bar-item">
-          <span class="skill-bar-label">MongoDB</span>
+          <div class="skill-bar-top"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-pct">82%</span></div>
           <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="82"></div></div>
-          <span class="skill-bar-pct">82%</span>
         </div>
         <div class="skill-bar-item">
-          <span class="skill-bar-label">MySQL</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="75"></div></div>
-          <span class="skill-bar-pct">75%</span>
-        </div>
-      </div>
-    </div>
- 
-    <div class="skill-card reveal reveal-delay-4">
-      <span class="skill-icon">🎨</span>
-      <div class="skill-name" data-en="UI/UX & Tools" data-ar="الأدوات والتصميم">UI/UX & Tools</div>
-      <div class="skill-desc" data-en="Crafting beautiful interfaces and using industry-standard dev tools." data-ar="تصميم واجهات جميلة واستخدام أدوات التطوير الاحترافية.">Crafting beautiful interfaces and using industry-standard dev tools.</div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <span class="skill-bar-label">Git</span>
+          <div class="skill-bar-top"><span class="skill-bar-name">Bootstrap / Tailwind</span><span class="skill-bar-pct">88%</span></div>
           <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
-          <span class="skill-bar-pct">88%</span>
         </div>
         <div class="skill-bar-item">
-          <span class="skill-bar-label">Figma</span>
+          <div class="skill-bar-top"><span class="skill-bar-name">Unit Testing</span><span class="skill-bar-pct">70%</span></div>
           <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="70"></div></div>
-          <span class="skill-bar-pct">70%</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag"><span class="tech-tag-icon">🅰️</span> Angular</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🌐</span> HTML5</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🎨</span> CSS3</span>
+          <span class="tech-tag"><span class="tech-tag-icon">⚡</span> JavaScript</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🅱️</span> Bootstrap</span>
+          <span class="tech-tag"><span class="tech-tag-icon">💨</span> Tailwind</span>
+          <span class="tech-tag"><span class="tech-tag-icon">☁️</span> Azure</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🤖</span> AI Tools</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skill-category-title">
+          <div class="cat-icon">⚙️</div>
+          <span data-en="Backend Development" data-ar="تطوير الواجهة الخلفية">Backend Development</span>
         </div>
         <div class="skill-bar-item">
-          <span class="skill-bar-label">Tailwind</span>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
-          <span class="skill-bar-pct">80%</span>
+          <div class="skill-bar-top"><span class="skill-bar-name">Node.js</span><span class="skill-bar-pct">78%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="78"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span class="skill-bar-name">Express.js</span><span class="skill-bar-pct">75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span class="skill-bar-name">MongoDB</span><span class="skill-bar-pct">72%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="72"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span class="skill-bar-name">DevOps Basics</span><span class="skill-bar-pct">60%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="60"></div></div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag"><span class="tech-tag-icon">🟢</span> Node.js</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🚂</span> Express.js</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🍃</span> MongoDB</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🐳</span> DevOps</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🔗</span> REST APIs</span>
+          <span class="tech-tag"><span class="tech-tag-icon">🔧</span> Git</span>
         </div>
       </div>
     </div>
- 
   </div>
 </section>
  
-<!-- Projects -->
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Experience" data-ar="الخبرة">Experience</div>
+      <h2 class="section-title" data-en="Work <span>Journey</span>" data-ar="مسيرتي <span>المهنية</span>">Work <span>Journey</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date" data-en="2024 – Present" data-ar="2024 – حتى الآن">2024 – Present</div>
+        <div class="timeline-card">
+          <div class="timeline-role" data-en="Software Engineer" data-ar="مهندس برمجيات">Software Engineer</div>
+          <div class="timeline-company" data-en="Sieraj Software Company – Cairo, Maadi" data-ar="شركة سراج للبرمجيات – القاهرة، المعادي">Sieraj Software Company – Cairo, Maadi</div>
+          <div class="timeline-desc" data-en="Working within a professional development team, receiving and delivering tasks, contributing to real-world production projects. Collaborating using agile workflows, writing clean code, and building scalable applications." data-ar="العمل ضمن فريق تطوير محترف، استقبال وتسليم المهام، والمساهمة في مشاريع إنتاجية حقيقية. التعاون باستخدام سير عمل رشيق، كتابة كود نظيف، وبناء تطبيقات قابلة للتطوير.">Working within a professional development team, receiving and delivering tasks, contributing to real-world production projects. Collaborating using agile workflows, writing clean code, and building scalable applications.</div>
+          <div class="timeline-tags">
+            <span class="t-tag">Angular</span>
+            <span class="t-tag">Node.js</span>
+            <span class="t-tag">MongoDB</span>
+            <span class="t-tag">Agile</span>
+            <span class="t-tag">Azure</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date" data-en="2023 – 2024" data-ar="2023 – 2024">2023 – 2024</div>
+        <div class="timeline-card">
+          <div class="timeline-role" data-en="Full Stack Trainee" data-ar="متدرب Full Stack">Full Stack Trainee</div>
+          <div class="timeline-company" data-en="Route Academy – Online" data-ar="روت أكاديمي – أونلاين">Route Academy – Online</div>
+          <div class="timeline-desc" data-en="Completed intensive Full Stack development bootcamp covering frontend and backend technologies. Built multiple projects and earned the Full Stack Certificate." data-ar="أتممت بوتكامب مكثف لتطوير Full Stack يغطي تقنيات الواجهة الأمامية والخلفية. بنيت مشاريع متعددة وحصلت على شهادة Full Stack.">Completed intensive Full Stack development bootcamp covering frontend and backend technologies. Built multiple projects and earned the Full Stack Certificate.</div>
+          <div class="timeline-tags">
+            <span class="t-tag">HTML/CSS/JS</span>
+            <span class="t-tag">Angular</span>
+            <span class="t-tag">Node.js</span>
+            <span class="t-tag">MongoDB</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date" data-en="2023" data-ar="2023">2023</div>
+        <div class="timeline-card">
+          <div class="timeline-role" data-en="ITI Trainee" data-ar="متدرب ITI">ITI Trainee</div>
+          <div class="timeline-company" data-en="Information Technology Institute (ITI)" data-ar="معهد تكنولوجيا المعلومات (ITI)">Information Technology Institute (ITI)</div>
+          <div class="timeline-desc" data-en="Received training from Egypt's premier IT institute, gaining foundational and advanced skills in software development and earned ITI certification." data-ar="تلقيت تدريباً من معهد تكنولوجيا المعلومات المرموق في مصر، واكتسبت مهارات أساسية ومتقدمة في تطوير البرمجيات وحصلت على شهادة ITI.">Received training from Egypt's premier IT institute, gaining foundational and advanced skills in software development and earned ITI certification.</div>
+          <div class="timeline-tags">
+            <span class="t-tag">Web Development</span>
+            <span class="t-tag">Programming</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== PROJECTS ===================== -->
 <section id="projects">
-  <div class="section-header reveal">
-    <span class="section-num">03</span>
-    <h2 class="section-title" data-en="My Projects" data-ar="مشاريعي">My Projects</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="projects-grid">
- 
-    <div class="project-card reveal reveal-delay-1">
-      <div class="project-thumb">
-        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80&fit=crop" alt="E-Commerce App" />
-        <div class="project-thumb-overlay"></div>
-        <span class="project-tag">Full Stack</span>
-      </div>
-      <div class="project-body">
-        <div class="project-title" data-en="E-Commerce Platform" data-ar="منصة تجارة إلكترونية">E-Commerce Platform</div>
-        <div class="project-desc" data-en="Full-featured online store with product management, cart, authentication and payment integration built with Angular & Node.js." data-ar="متجر إلكتروني متكامل مع إدارة المنتجات والعربة والمصادقة ودمج الدفع.">Full-featured online store with product management, cart, authentication and payment integration built with Angular & Node.js.</div>
-        <div class="project-tech">
-          <span class="tech-badge">Angular</span>
-          <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">MongoDB</span>
-          <span class="tech-badge">JWT</span>
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Projects" data-ar="المشاريع">Projects</div>
+      <h2 class="section-title" data-en="Featured <span>Work</span>" data-ar="الأعمال <span>المميزة</span>">Featured <span>Work</span></h2>
+      <p class="section-desc" data-en="A selection of real-world projects built with modern technologies." data-ar="مجموعة من المشاريع الحقيقية المبنية بتقنيات حديثة.">A selection of real-world projects built with modern technologies.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-preview">🛒</div>
+        <div class="project-body">
+          <div class="project-type" data-en="Full Stack" data-ar="Full Stack">Full Stack</div>
+          <div class="project-name" data-en="E-Commerce Platform" data-ar="منصة التجارة الإلكترونية">E-Commerce Platform</div>
+          <div class="project-desc" data-en="A complete online shopping platform with product catalog, cart management, authentication, payment integration, and admin dashboard." data-ar="منصة تسوق إلكترونية متكاملة مع كتالوج المنتجات وإدارة السلة والمصادقة وتكامل الدفع ولوحة تحكم الإدارة.">A complete online shopping platform with product catalog, cart management, authentication, payment integration, and admin dashboard.</div>
+          <div class="project-stack">
+            <span class="stack-tag">Angular</span><span class="stack-tag">Node.js</span>
+            <span class="stack-tag">MongoDB</span><span class="stack-tag">Express</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mu1rr11r" target="_blank" class="project-link primary" data-en="GitHub →" data-ar="GitHub →">GitHub →</a>
+          </div>
         </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo →</a>
-          <a href="#" class="project-link">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-preview">🎓</div>
+        <div class="project-body">
+          <div class="project-type" data-en="Full Stack" data-ar="Full Stack">Full Stack</div>
+          <div class="project-name" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</div>
+          <div class="project-desc" data-en="A comprehensive e-learning solution with courses, video content, student progress tracking, and instructor management capabilities." data-ar="حل تعليمي إلكتروني شامل يتضمن الدورات ومحتوى الفيديو وتتبع تقدم الطلاب وإمكانيات إدارة المدربين.">A comprehensive e-learning solution with courses, video content, student progress tracking, and instructor management capabilities.</div>
+          <div class="project-stack">
+            <span class="stack-tag">Angular</span><span class="stack-tag">Node.js</span>
+            <span class="stack-tag">MongoDB</span><span class="stack-tag">Tailwind</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mu1rr11r" target="_blank" class="project-link primary" data-en="GitHub →" data-ar="GitHub →">GitHub →</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-preview">🏢</div>
+        <div class="project-body">
+          <div class="project-type" data-en="Company Project" data-ar="مشروع شركة">Company Project</div>
+          <div class="project-name" data-en="Enterprise Solutions" data-ar="حلول المؤسسات">Enterprise Solutions</div>
+          <div class="project-desc" data-en="Real-world applications developed at Sieraj Software Company as part of a professional development team, following industry best practices." data-ar="تطبيقات حقيقية تم تطويرها في شركة سراج للبرمجيات كجزء من فريق تطوير محترف، باتباع أفضل الممارسات الصناعية.">Real-world applications developed at Sieraj Software Company as part of a professional development team, following industry best practices.</div>
+          <div class="project-stack">
+            <span class="stack-tag">Angular</span><span class="stack-tag">Azure</span>
+            <span class="stack-tag">DevOps</span><span class="stack-tag">Agile</span>
+          </div>
+          <div class="project-links">
+            <a href="https://www.sieraj.com/" target="_blank" class="project-link primary" data-en="Company →" data-ar="الشركة →">Company →</a>
+          </div>
         </div>
       </div>
     </div>
- 
-    <div class="project-card reveal reveal-delay-2">
-      <div class="project-thumb">
-        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80&fit=crop" alt="Dashboard App" />
-        <div class="project-thumb-overlay"></div>
-        <span class="project-tag">Frontend</span>
-      </div>
-      <div class="project-body">
-        <div class="project-title" data-en="Analytics Dashboard" data-ar="لوحة تحكم تحليلية">Analytics Dashboard</div>
-        <div class="project-desc" data-en="Real-time data visualization dashboard with charts, KPIs, and dynamic reporting built with Angular and D3.js." data-ar="لوحة تحكم لعرض البيانات في الوقت الحقيقي مع رسوم بيانية ومؤشرات أداء.">Real-time data visualization dashboard with charts, KPIs, and dynamic reporting built with Angular and D3.js.</div>
-        <div class="project-tech">
-          <span class="tech-badge">Angular</span>
-          <span class="tech-badge">D3.js</span>
-          <span class="tech-badge">TypeScript</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo →</a>
-          <a href="#" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
- 
-    <div class="project-card reveal reveal-delay-3">
-      <div class="project-thumb">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="Task Manager" />
-        <div class="project-thumb-overlay"></div>
-        <span class="project-tag">Full Stack</span>
-      </div>
-      <div class="project-body">
-        <div class="project-title" data-en="Task Management System" data-ar="نظام إدارة المهام">Task Management System</div>
-        <div class="project-desc" data-en="Collaborative project management tool with drag-and-drop, real-time updates and team collaboration features." data-ar="أداة إدارة مشاريع تعاونية مع سحب وإفلات وتحديثات فورية وميزات التعاون الجماعي.">Collaborative project management tool with drag-and-drop, real-time updates and team collaboration features.</div>
-        <div class="project-tech">
-          <span class="tech-badge">Angular</span>
-          <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">Socket.io</span>
-          <span class="tech-badge">PostgreSQL</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo →</a>
-          <a href="#" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
- 
   </div>
 </section>
  
-<!-- Contact -->
+<!-- ===================== CERTIFICATES ===================== -->
+<section id="certificates">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Certificates" data-ar="الشهادات">Certificates</div>
+      <h2 class="section-title" data-en="My <span>Credentials</span>" data-ar="اعتماداتي <span>المهنية</span>">My <span>Credentials</span></h2>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-logo">🎯</div>
+        <div>
+          <div class="cert-issuer" data-en="Route Academy" data-ar="روت أكاديمي">Route Academy</div>
+          <div class="cert-name" data-en="Full Stack Web Development" data-ar="تطوير الويب المتكامل (Full Stack)">Full Stack Web Development</div>
+        </div>
+        <div class="cert-date">2024</div>
+        <a href="https://www.facebook.com/Routelearning" target="_blank" class="cert-link">
+          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
+        </a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-logo">🏛️</div>
+        <div>
+          <div class="cert-issuer" data-en="Information Technology Institute" data-ar="معهد تكنولوجيا المعلومات">Information Technology Institute</div>
+          <div class="cert-name" data-en="ITI Professional Certificate" data-ar="شهادة ITI المهنية">ITI Professional Certificate</div>
+        </div>
+        <div class="cert-date">2023</div>
+        <a href="https://iti.gov.eg" target="_blank" class="cert-link">
+          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
+        </a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-logo">⭐</div>
+        <div>
+          <div class="cert-issuer" data-en="Sieraj Software Company" data-ar="شركة سراج للبرمجيات">Sieraj Software Company</div>
+          <div class="cert-name" data-en="Software Development Certificate I" data-ar="شهادة تطوير البرمجيات I">Software Development Certificate I</div>
+        </div>
+        <div class="cert-date">2023</div>
+        <a href="https://www.sieraj.com/" target="_blank" class="cert-link">
+          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
+        </a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-logo">🌟</div>
+        <div>
+          <div class="cert-issuer" data-en="Sieraj Software Company" data-ar="شركة سراج للبرمجيات">Sieraj Software Company</div>
+          <div class="cert-name" data-en="Software Development Certificate II" data-ar="شهادة تطوير البرمجيات II">Software Development Certificate II</div>
+        </div>
+        <div class="cert-date">2024</div>
+        <a href="https://www.sieraj.com/" target="_blank" class="cert-link">
+          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== ACHIEVEMENTS ===================== -->
+<section id="achievements" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Achievements" data-ar="الإنجازات">Achievements</div>
+      <h2 class="section-title" data-en="<span>Proud</span> Moments" data-ar="لحظات <span>فخر</span>"><span>Proud</span> Moments</h2>
+    </div>
+    <div class="achieve-grid">
+      <div class="achieve-card">
+        <div class="achieve-icon">🥉</div>
+        <div class="achieve-title" data-en="3rd Place – Automation" data-ar="المركز الثالث – الأتمتة">3rd Place – Automation</div>
+        <div class="achieve-desc" data-en="Achieved third place in the Automation field competition, demonstrating expertise in automated systems and workflows." data-ar="حصلت على المركز الثالث في مسابقة مجال الأتمتة، مما يُظهر الخبرة في الأنظمة والسير المؤتمتة.">Achieved third place in the Automation field competition, demonstrating expertise in automated systems and workflows.</div>
+      </div>
+      <div class="achieve-card">
+        <div class="achieve-icon">🎓</div>
+        <div class="achieve-title" data-en="Excellent Graduation Grade" data-ar="درجة تخرج ممتازة">Excellent Graduation Grade</div>
+        <div class="achieve-desc" data-en="Earned an Excellent grade in the graduation project, showcasing advanced technical skills and problem-solving abilities." data-ar="حصلت على درجة ممتازة في مشروع التخرج، مما يُبرز المهارات التقنية المتقدمة وقدرات حل المشكلات.">Earned an Excellent grade in the graduation project, showcasing advanced technical skills and problem-solving abilities.</div>
+      </div>
+      <div class="achieve-card">
+        <div class="achieve-icon">🚀</div>
+        <div class="achieve-title" data-en="Real-World Projects" data-ar="مشاريع حقيقية">Real-World Projects</div>
+        <div class="achieve-desc" data-en="Successfully built and delivered real-world projects at Sieraj Software Company, impacting actual users and business operations." data-ar="بنيت وسلّمت بنجاح مشاريع حقيقية في شركة سراج للبرمجيات، مما أثّر في المستخدمين الفعليين وعمليات الأعمال.">Successfully built and delivered real-world projects at Sieraj Software Company, impacting actual users and business operations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===================== CONTACT ===================== -->
 <section id="contact">
-  <div class="section-header reveal">
-    <span class="section-num">04</span>
-    <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-info reveal reveal-delay-1">
-      <h3 data-en="Let's build something great together." data-ar="هنبني حاجة عظيمة مع بعض.">Let's build something great together.</h3>
-      <p data-en="I'm always open to new opportunities, collaborations, and interesting projects. Whether you have a project in mind or just want to connect, my inbox is always open." data-ar="دايمًا مفتوح لفرص جديدة وتعاونات ومشاريع مثيرة. سواء عندك مشروع أو عايز تتواصل بس، أنا هنا.">
-        I'm always open to new opportunities, collaborations, and interesting projects. Whether you have a project in mind or just want to connect, my inbox is always open.
-      </p>
-      <div class="contact-links">
-        <a href="tel:+201141179106" class="contact-link">
-          <span class="contact-link-icon">📞</span>
-          <div class="contact-link-info">
-            <span class="contact-link-label">Phone</span>
-            <span class="contact-link-val">+20 114 117 9106</span>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-tag" data-en="Contact" data-ar="تواصل">Contact</div>
+        <div class="contact-info">
+          <h3 data-en="Let's Build Something <span style='background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent'>Amazing</span>" data-ar="لنبني شيئاً <span style='background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent'>رائعاً</span> معاً">Let's Build Something <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Amazing</span></h3>
+          <p data-en="Open to exciting opportunities, collaborations, and freelance projects. Drop me a message!" data-ar="أنا منفتح على الفرص المثيرة والتعاون والمشاريع المستقلة. أرسل لي رسالة!">Open to exciting opportunities, collaborations, and freelance projects. Drop me a message!</p>
+        </div>
+        <div class="contact-links">
+          <a href="tel:01141179106" class="contact-link-item">
+            <div class="cl-icon">📞</div>
+            <div><div class="cl-text">01141179106</div><div class="cl-sub" data-en="Phone" data-ar="الهاتف">Phone</div></div>
+          </a>
+          <a href="https://github.com/mu1rr11r" target="_blank" class="contact-link-item">
+            <div class="cl-icon">🐙</div>
+            <div><div class="cl-text">github.com/mu1rr11r</div><div class="cl-sub">GitHub</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="contact-link-item">
+            <div class="cl-icon">💼</div>
+            <div><div class="cl-text">Moutasem Mahmoud</div><div class="cl-sub">LinkedIn</div></div>
+          </a>
+          <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="contact-link-item">
+            <div class="cl-icon">📘</div>
+            <div><div class="cl-text">moutasem.mahmoud</div><div class="cl-sub">Facebook</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="form-group">
+            <label class="form-label" data-en="Your Name" data-ar="اسمك">Your Name</label>
+            <input type="text" class="form-input" id="form-name" data-placeholder-en="John Doe" data-placeholder-ar="أحمد محمد" placeholder="John Doe">
           </div>
-        </a>
-        <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="contact-link">
-          <span class="contact-link-icon">🌐</span>
-          <div class="contact-link-info">
-            <span class="contact-link-label">Facebook</span>
-            <span class="contact-link-val">moutasem.mahmoud.el.shimey</span>
+          <div class="form-group">
+            <label class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+            <input type="email" class="form-input" id="form-email" data-placeholder-en="john@example.com" data-placeholder-ar="ahmed@example.com" placeholder="john@example.com">
           </div>
-        </a>
-        <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="contact-link">
-          <span class="contact-link-icon">💼</span>
-          <div class="contact-link-info">
-            <span class="contact-link-label">LinkedIn</span>
-            <span class="contact-link-val">moutasem-mahmoud-278a84338</span>
+          <div class="form-group">
+            <label class="form-label" data-en="Message" data-ar="الرسالة">Message</label>
+            <textarea class="form-input" id="form-msg" rows="5" data-placeholder-en="Tell me about your project..." data-placeholder-ar="أخبرني عن مشروعك..." placeholder="Tell me about your project..."></textarea>
           </div>
-        </a>
+          <button class="form-submit" id="form-submit">
+            <span data-en="Send Message ✉️" data-ar="إرسال الرسالة ✉️">Send Message ✉️</span>
+          </button>
+          <div class="form-success" id="form-success">
+            ✅ <span data-en="Message sent! I'll be in touch soon." data-ar="تم إرسال الرسالة! سأتواصل معك قريباً.">Message sent! I'll be in touch soon.</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="contact-form reveal reveal-delay-2">
-      <div class="form-group">
-        <label data-en="YOUR NAME" data-ar="اسمك">YOUR NAME</label>
-        <input type="text" placeholder="John Doe" data-placeholder-en="John Doe" data-placeholder-ar="اكتب اسمك" />
-      </div>
-      <div class="form-group">
-        <label data-en="YOUR EMAIL" data-ar="إيميلك">YOUR EMAIL</label>
-        <input type="email" placeholder="john@example.com" data-placeholder-en="john@example.com" data-placeholder-ar="اكتب إيميلك" />
-      </div>
-      <div class="form-group">
-        <label data-en="MESSAGE" data-ar="رسالتك">MESSAGE</label>
-        <textarea placeholder="Tell me about your project..." data-placeholder-en="Tell me about your project..." data-placeholder-ar="اكتب رسالتك هنا..."></textarea>
-      </div>
-      <a href="#" class="btn-primary" style="text-align:center;display:block;">
-        <span data-en="Send Message →" data-ar="إرسال الرسالة →">Send Message →</span>
-      </a>
     </div>
   </div>
 </section>
  
-<!-- Footer -->
+<!-- ===================== FOOTER ===================== -->
 <footer>
-  <div class="footer-text">
-    © 2025 <span>Moutasem El-Shimey</span>. Built with ❤️ &amp; lots of ☕
-  </div>
-  <div class="footer-socials">
-    <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="social-btn" title="Facebook">f</a>
-    <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="social-btn" title="LinkedIn">in</a>
-    <a href="tel:+201141179106" class="social-btn" title="Phone">📞</a>
+  <div class="footer-inner">
+    <div class="footer-logo">MM.</div>
+    <div class="footer-copy" data-en="© 2025 Moutasem Mahmoud. Crafted with ❤️ in Egypt" data-ar="© 2025 معتصم محمود. صُنع بـ ❤️ في مصر">© 2025 Moutasem Mahmoud. Crafted with ❤️ in Egypt</div>
+    <div class="footer-socials">
+      <a href="https://github.com/mu1rr11r" target="_blank" class="social-link" title="GitHub">🐙</a>
+      <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="social-link" title="LinkedIn">💼</a>
+      <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="social-link" title="Facebook">📘</a>
+    </div>
   </div>
 </footer>
  
