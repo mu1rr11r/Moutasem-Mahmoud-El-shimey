@@ -1,82 +1,115 @@
-const hamburger=document.getElementById('hamburger');
-const mobileMenu=document.getElementById('mobile-menu');
-
-hamburger.addEventListener('click',()=>{
-  mobileMenu.classList.toggle('open');
-});
-
-const themeBtn=document.getElementById('theme-toggle');
-themeBtn.textContent='☀️';
-
-themeBtn.addEventListener('click',()=>{
-  const html=document.documentElement;
-  const isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  themeBtn.textContent=isDark?'☀️':'🌙';
-});
-
-const langBtn=document.getElementById('lang-toggle');
-langBtn.textContent='عربي';
-
-langBtn.addEventListener('click',()=>{
-  const html=document.documentElement;
-  const isEn=html.getAttribute('data-lang')==='en';
-  const newLang=isEn?'ar':'en';
-  html.setAttribute('data-lang',newLang);
-  html.setAttribute('dir',isEn?'rtl':'ltr');
-  langBtn.textContent=isEn?'EN':'عربي';
-  updateLang(newLang);
-});
-
-function updateLang(lang){
-  document.querySelectorAll('[data-en],[data-ar]').forEach(el=>{
-    const val=el.getAttribute('data-'+lang);
-    if(val) el.innerHTML=val;
+/* ─── PARTICLES ─── */
+(function(){
+  const canvas = document.getElementById('particleCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+ 
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+ 
+  const colors = ['#ff6b35','#00b4d8','#ff85b3','#2dc653','#ffc43d','#9b5de5'];
+ 
+  for(let i=0;i<55;i++){
+    particles.push({
+      x: Math.random()*2000, y: Math.random()*2000,
+      r: Math.random()*3+1,
+      vx: (Math.random()-.5)*.4,
+      vy: (Math.random()-.5)*.4,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      alpha: Math.random()*.5+.2
+    });
+  }
+ 
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+      ctx.beginPath();
+      ctx.arc(p.x%w, p.y%h, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fill();
+      p.x += p.vx; p.y += p.vy;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+ 
+/* ─── SCROLL REVEAL ─── */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=> e.target.classList.add('visible'), i*80);
+    }
   });
-  document.querySelectorAll('[data-placeholder-'+lang+']').forEach(el=>{
-    el.placeholder=el.getAttribute('data-placeholder-'+lang);
+},{threshold:.12});
+revealEls.forEach(el=>revealObs.observe(el));
+ 
+/* ─── SKILL BARS ─── */
+const barObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.progress-fill').forEach(bar=>{
+        bar.style.width = bar.dataset.pct+'%';
+      });
+    }
+  });
+},{threshold:.3});
+const skillsGrid = document.getElementById('skillsGrid');
+if(skillsGrid) barObs.observe(skillsGrid);
+ 
+/* ─── COUNTER ANIMATION ─── */
+function animateCounters(){
+  document.querySelectorAll('.stat-num[data-target]').forEach(el=>{
+    const target = parseInt(el.dataset.target);
+    let start = 0;
+    const dur = 1600;
+    const step = (timestamp)=>{
+      if(!start) start = timestamp;
+      const prog = Math.min((timestamp-start)/dur, 1);
+      el.textContent = Math.floor(prog*target)+(target>5?'+':'+');
+      if(prog<1) requestAnimationFrame(step);
+      else el.textContent = target+'+';
+    };
+    requestAnimationFrame(step);
   });
 }
-
-updateLang(document.documentElement.getAttribute('data-lang') || 'en');
-
-document.querySelectorAll('.nav-link,.mobile-link').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    const target=document.querySelector(link.getAttribute('href'));
-    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-    mobileMenu.classList.remove('open');
+setTimeout(animateCounters, 800);
+ 
+/* ─── SCROLL TO TOP ─── */
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll',()=>{
+  scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+});
+ 
+/* ─── NAV ACTIVE LINK ─── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{
+    if(window.scrollY >= s.offsetTop - 200) cur = s.id;
+  });
+  navLinks.forEach(a=>{
+    a.style.background = a.getAttribute('href')==='#'+cur ? 'var(--dark)' : '';
+    a.style.color = a.getAttribute('href')==='#'+cur ? '#fff' : '';
   });
 });
-
-document.getElementById('form-submit').addEventListener('click',()=>{
-  const n=document.getElementById('form-name').value;
-  const e=document.getElementById('form-email').value;
-  const m=document.getElementById('form-msg').value;
-  if(!n||!e||!m){
-    const lang=document.documentElement.getAttribute('data-lang');
-    alert(lang==='ar'?'يرجى ملء جميع الحقول':'Please fill all fields');
-    return;
-  }
-  document.getElementById('form-submit').textContent='Sending...';
-  setTimeout(()=>{
-    document.getElementById('form-submit').style.display='none';
-    const s=document.getElementById('form-success');
-    s.style.display='block';
-    const lang=document.documentElement.getAttribute('data-lang');
-    const msg=s.querySelector('[data-'+lang+']');
-    if(msg) s.innerHTML='✅ '+msg.getAttribute('data-'+lang);
-  },1200);
-});
-
-const scrollTopButton=document.getElementById('scroll-top');
-window.addEventListener('scroll',()=>{
-  if(window.scrollY>320){
-    scrollTopButton.classList.add('show');
-  } else {
-    scrollTopButton.classList.remove('show');
-  }
-});
-scrollTopButton.addEventListener('click',()=>{
-  window.scrollTo({top:0,left:0,behavior:'smooth'});
-});
+ 
+/* ─── FORM ─── */
+function sendMsg(){
+  const name  = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const msg   = document.getElementById('fmsg').value.trim();
+  if(!name||!email||!msg){ alert('Please fill in all fields!'); return; }
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+ 
+/* ─── SMOOTH NAV HIGHLIGHT ON LOAD ─── */
+window.dispatchEvent(new Event('scroll'));

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- مهم: verification -->
   <meta name="google-site-verification" content="googleab06c2af7a49917b.html">
 
   <!-- Title -->
@@ -19,7 +18,6 @@
   <meta name="author" content="Moutasem Mahmoud">
   <meta name="robots" content="index, follow">
 
-  <!-- 🔥 أهم إضافة عشان اسم الموقع -->  
   <meta name="application-name" content="Moutasem Mahmoud">
   <meta property="og:site_name" content="Moutasem Mahmoud">
 
@@ -43,515 +41,511 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.4/css/all.min.css" integrity="sha512-P4KqUDkHjQ+IsNQt+zJ5PLSvUxJY8ltzNo6zFs1q+SZjyw6Wq0I+Oui1ypW4xJ1EN+3H+DjD2G7mAZ1iezXSfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+ <!-- page transition -->
+<div class="page-transition"></div>
  
-<!-- Navigation -->
-<nav id="navbar">
+<!-- particle canvas -->
+<canvas id="particleCanvas"></canvas>
+ 
+<!-- ─── NAV ─── -->
+<nav>
   <div class="nav-logo">MM.</div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#about" class="nav-link" data-en="About" data-ar="عني">About</a></li>
-    <li><a href="#cv" class="nav-link" data-en="CV" data-ar="السيرة">CV</a></li>
-    <li><a href="#skills" class="nav-link" data-en="Skills" data-ar="المهارات">Skills</a></li>
-    <li><a href="#experience" class="nav-link" data-en="Experience" data-ar="الخبرة">Experience</a></li>
-    <li><a href="#projects" class="nav-link" data-en="Projects" data-ar="المشاريع">Projects</a></li>
-    <li><a href="#certificates" class="nav-link" data-en="Certs" data-ar="الشهادات">Certs</a></li>
-    <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">Contact</a></li>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-controls">
-    <button class="ctrl-btn lang-btn" id="lang-toggle" title="Switch Language">عربي</button>
-    <button class="ctrl-btn" id="theme-toggle" title="Toggle Theme">☀️</button>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
 </nav>
  
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#about" class="mobile-link" data-en="About" data-ar="عني">About</a>
-  <a href="#cv" class="mobile-link" data-en="CV" data-ar="السيرة">CV</a>
-  <a href="#projects" class="mobile-link" data-en="Projects" data-ar="المشاريع">Projects</a>
-  <a href="#certificates" class="mobile-link" data-en="Certs" data-ar="الشهادات">Certs</a>
-  <a href="#contact" class="mobile-link" data-en="Contact" data-ar="تواصل">Contact</a>
-</div>
+<!-- ══════════════════════════════
+     HOME
+══════════════════════════════ -->
+<section id="home">
+  <!-- bg blobs -->
+  <div class="blob" style="width:500px;height:500px;background:var(--accent1);top:-100px;right:-100px;animation-delay:0s"></div>
+  <div class="blob" style="width:300px;height:300px;background:var(--accent5);bottom:50px;left:-50px;animation-delay:2s"></div>
  
-<!-- ===================== HERO ===================== -->
-<section id="hero">
-  <div class="hero-eyebrow">
-    <span class="hero-eyebrow-dot"></span>
-    <span data-en="Available for opportunities" data-ar="متاح للفرص الوظيفية">Available for opportunities</span>
+  <div class="hero-eyebrow">Available for Work</div>
+ 
+  <div class="hero-name">
+    Moutasem<br><span>Mahmoud</span>
   </div>
-  <h1 class="hero-name">
-    <span class="word1" data-en="Moutasem " data-ar="معتصم ">Moutasem </span><br>
-    <span class="word2" data-en="Mahmoud" data-ar="محمود">Mahmoud</span>
-  </h1>
-  <p class="hero-role">
-    <span data-en="Frontend Angular Developer" data-ar="مطور Angular" >Frontend Angular Developer</span>
-  </p>
-  <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary">
-      <span data-en="View My Work" data-ar="عرض أعمالي">View My Work</span> →
-    </a>
-    <a href="#cv" class="btn btn-ghost">
-      <span data-en="View CV" data-ar="عرض السيرة">View CV</span>
-    </a>
-    <a href="#contact" class="btn btn-ghost">
-      <span data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</span>
-    </a>
+ 
+  <div class="hero-role">Frontend Angular Developer — Building Remarkable Interfaces</div>
+ 
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-primary">View My Work →</a>
+    <a href="#cv" class="btn btn-outline">View CV</a>
+    <a href="#contact" class="btn btn-ghost">Get In Touch</a>
   </div>
+ 
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-num">1+</div>
-      <div class="stat-label" data-en="Year Experience" data-ar="سنة خبرة">Year Experience</div>
+      <span class="stat-num" data-target="1">0</span>
+      <span class="stat-label">Year Experience</span>
     </div>
     <div class="stat-item">
-      <div class="stat-num">10+</div>
-      <div class="stat-label" data-en="Projects Built" data-ar="مشروع منجز">Projects Built</div>
+      <span class="stat-num" data-target="10">0</span>
+      <span class="stat-label">Projects Built</span>
     </div>
     <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label" data-en="Certifications" data-ar="شهادات معتمدة">Certifications</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">🥉</div>
-      <div class="stat-label" data-en="Automation Award" data-ar="جائزة الأتمتة">Automation Award</div>
+      <span class="stat-num" data-target="4">0</span>
+      <span class="stat-label">Certifications</span>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
+ 
+  <!-- Hero graphic -->
+  <div class="hero-graphic">
+    <div class="avatar-ring" style="position:relative">
+      <div class="avatar-inner">MM</div>
+      <div class="float-tag ft1">🅰️ Angular Expert</div>
+      <div class="float-tag ft2">⚡ TypeScript</div>
+      <div class="float-tag ft3">🎨 UI / UX</div>
+    </div>
   </div>
 </section>
  
-<!-- ===================== ABOUT ===================== -->
+<!-- ══════════════════════════════
+     ABOUT
+══════════════════════════════ -->
 <section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="about-img-wrap">
-          <div class="about-avatar"><img src="./image/WhatsApp Image 2025-06-24 at 18.01.17_36b8af38.jpg" alt="moutasem"></div>
-        </div>
-        <div class="about-badge about-badge-1">
-          <div class="badge-icon">🏢</div>
-          <div class="badge-val" data-en="Sieraj Co." data-ar="شركة سراج">Sieraj Co.</div>
-          <div class="badge-sub" data-en="Current Employer" data-ar="جهة العمل">Current Employer</div>
-        </div>
-        <div class="about-badge about-badge-2">
-          <div class="badge-icon">📍</div>
-          <div class="badge-val" data-en="Egypt" data-ar="مصر">Egypt</div>
-          <div class="badge-sub" data-en="Cairo, Maadi" data-ar="القاهرة، المعادي">Cairo, Maadi</div>
-        </div>
+  <div class="blob" style="width:400px;height:400px;background:var(--accent2);top:-80px;right:-60px;animation-delay:1s"></div>
+ 
+  <div class="section-label reveal">About Me</div>
+  <h2 class="section-title reveal">Crafting Digital<br>Experiences</h2>
+ 
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>A passionate <strong>Frontend Angular Developer</strong> from Egypt 🇪🇬 who builds clean, responsive interfaces and user-focused web applications.</p>
+      <p>I specialize in <strong>Angular</strong> and frontend architecture for modern web products — focusing on performance, accessibility, and elegant design.</p>
+      <p>Currently studying at <strong>El Shorouk Academy</strong> (Information Systems) with graduation in 2025/2026, while working professionally at Sieraj Software Company.</p>
+    </div>
+ 
+    <div class="about-cards reveal">
+      <div class="info-card">
+        <div class="label">Age</div>
+        <div class="value">23 years old</div>
       </div>
-      <div class="about-content reveal">
-        <div class="section-header">
-          <div class="section-tag" data-en="About Me" data-ar="عني">About Me</div>
-          <h2 class="section-title" data-en="Crafting <span>Digital</span> Experiences" data-ar="أصنع تجارب <span>رقمية</span> متميزة">Crafting <span>Digital</span> Experiences</h2>
-          <p class="section-desc" data-en="A passionate Frontend Angular Developer from Egypt who builds clean, responsive interfaces and user-focused web applications. I specialize in Angular and frontend architecture for modern web products." data-ar="مطور واجهات أمامية باستخدام Angular من مصر يبني واجهات نظيفة ومتجاوبة وتطبيقات ويب موجهة للمستخدم. أختص في Angular وبنية الواجهة الأمامية لتجارب ويب حديثة.">A passionate Frontend Angular Developer from Egypt who builds clean, responsive interfaces and user-focused web applications. I specialize in Angular and frontend architecture for modern web products.</p>
-        </div>
-        <div class="about-info-grid">
-          <div class="info-item">
-            <div class="info-label" data-en="Age" data-ar="العمر">Age</div>
-            <div class="info-val">23</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" data-en="Country" data-ar="الدولة">Country</div>
-            <div class="info-val" data-en="Egypt 🇪🇬" data-ar="مصر 🇪🇬">Egypt 🇪🇬</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" data-en="University" data-ar="الجامعة">University</div>
-            <div class="info-val" data-en="El Shorouk Academy" data-ar="أكاديمية الشروق">El Shorouk Academy</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" data-en="Major" data-ar="التخصص">Major</div>
-            <div class="info-val" data-en="Information Systems" data-ar="نظم المعلومات">Information Systems</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" data-en="Graduation" data-ar="التخرج">Graduation</div>
-            <div class="info-val">2025/2026</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" data-en="English" data-ar="اللغة الإنجليزية">English</div>
-            <div class="info-val" data-en="Intermediate" data-ar="متوسط">Intermediate</div>
-          </div>
-        </div>
+      <div class="info-card">
+        <div class="label">Country</div>
+        <div class="value">Egypt 🇪🇬</div>
+      </div>
+      <div class="info-card">
+        <div class="label">University</div>
+        <div class="value">El Shorouk Academy</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Major</div>
+        <div class="value">Information Systems</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Graduation</div>
+        <div class="value">2025 / 2026</div>
+      </div>
+      <div class="info-card">
+        <div class="label">English</div>
+        <div class="value">Intermediate</div>
       </div>
     </div>
   </div>
 </section>
  
-<!-- ===================== CV ===================== -->
+<!-- ══════════════════════════════
+     CV
+══════════════════════════════ -->
 <section id="cv">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag" data-en="CV" data-ar="السيرة">CV</div>
-      <h2 class="section-title" data-en="Download <span>My CV</span>" data-ar="حمّل <span>السيرة الذاتية</span>">Download <span>My CV</span></h2>
-      <p class="section-desc" data-en="A dedicated Angular frontend developer profile with experience in building polished interfaces and user experiences." data-ar="سيرة مطور واجهات Angular مخصصة ببناء واجهات وتجارب مستخدم مصقولة.">A dedicated Angular frontend developer profile with experience in building polished interfaces and user experiences.</p>
+  <div class="blob" style="width:350px;height:350px;background:var(--accent3);bottom:-60px;left:-60px;animation-delay:.5s"></div>
+ 
+  <div class="section-label reveal">Resume</div>
+  <h2 class="section-title reveal">Download My CV</h2>
+ 
+  <div class="cv-container">
+    <div class="cv-card reveal">
+      <h3>Front-End Focus</h3>
+      <p>A dedicated Angular frontend developer profile with experience in building polished interfaces and user experiences.</p>
+      <ul class="cv-features">
+        <li>Angular Applications</li>
+        <li>Responsive UI Design</li>
+        <li>Component-Based Architecture</li>
+        <li>Performance Optimization</li>
+        <li>Modern JavaScript / TypeScript</li>
+      </ul>
+      <a href="cv.pdf" class="btn btn-primary" download>⬇ Download CV</a>
     </div>
-    <div class="cv-grid">
-      <div class="cv-box">
-        <h3 data-en="Front-End Focus" data-ar="تركيز الواجهة الأمامية">Front-End Focus</h3>
-        <p data-en="Specialized in Angular, HTML, CSS and modern JavaScript. I deliver responsive, accessible designs with a clean development approach." data-ar="متخصص في Angular وHTML وCSS وجافا سكريبت الحديثة. أقدم تصميمات متجاوبة وسهلة الاستخدام مع نهج تطوير نظيف.">Specialized in Angular, HTML, CSS and modern JavaScript. I deliver responsive, accessible designs with a clean development approach.</p>
-        <ul>
-          <li data-en="Angular Applications" data-ar="تطبيقات Angular">Angular Applications</li>
-          <li data-en="Responsive UI Design" data-ar="تصميم واجهة متجاوبة">Responsive UI Design</li>
-          <li data-en="Component-Based Architecture" data-ar="هندسة مكونات متقدمة">Component-Based Architecture</li>
-          <li data-en="Performance Optimization" data-ar="تحسين الأداء">Performance Optimization</li>
-          <li data-en="Modern JavaScript" data-ar="جافا سكريبت الحديثة">Modern JavaScript</li>
-        </ul>
+ 
+    <div class="cv-preview reveal">
+      <div class="cv-preview-header">
+        <h2>Moutasem Mahmoud</h2>
+        <p>Frontend Angular Developer · Cairo, Egypt</p>
       </div>
-      <div class="cv-actions">
-        <a href="./cv.pdf" class="btn btn-primary" download>
-          <span data-en="Download CV" data-ar="تحميل السيرة">Download CV</span>
-        </a>
-        <p class="cv-note" data-en="Place your resume file as cv.pdf in the website folder." data-ar="ضع ملف السيرة الذاتية باسم cv.pdf في مجلد الموقع.">Place your resume file as cv.pdf in the website folder.</p>
+      <div class="cv-row">
+        <div class="cv-block">
+          <div class="cb-title">Education</div>
+          <p>El Shorouk Academy<br>Information Systems<br>Graduating 2025/2026</p>
+        </div>
+        <div class="cv-block">
+          <div class="cb-title">Experience</div>
+          <p>Angular Engineer @ Sieraj (2024–Now)<br>Frontend Trainee @ Route (2023–2024)<br>ITI Trainee (2023)</p>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-block">
+          <div class="cb-title">Core Skills</div>
+          <p>Angular · TypeScript · HTML/CSS<br>JavaScript · Bootstrap · Tailwind<br>Reactive Forms · RxJS</p>
+        </div>
+        <div class="cv-block">
+          <div class="cb-title">Certifications</div>
+          <p>Route Academy – Full Stack<br>ITI Professional Certificate<br>Sieraj Certs I & II</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
  
-<!-- ===================== SKILLS ===================== -->
-
+<!-- ══════════════════════════════
+     SKILLS
+══════════════════════════════ -->
 <section id="skills">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag" data-en="Skills" data-ar="المهارات">Skills</div>
-      <h2 class="section-title" data-en="My <span>Frontend Stack</span>" data-ar="مجموعة <span>الواجهة الأمامية</span>">My <span>Frontend Stack</span></h2>
-      <p class="section-desc" data-en="A focused frontend toolkit built around Angular and modern web UI best practices." data-ar="مجموعة أدوات مُركزة للواجهة الأمامية مبنية حول Angular وأفضل ممارسات واجهات الويب الحديثة.">A focused frontend toolkit built around Angular and modern web UI best practices.</p>
+  <div class="blob" style="width:380px;height:380px;background:var(--accent4);top:-60px;right:-40px;animation-delay:1.5s"></div>
+ 
+  <div class="section-label reveal">Expertise</div>
+  <h2 class="section-title reveal">My Frontend Stack</h2>
+ 
+  <div class="skills-grid" id="skillsGrid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">🅰️</div>
+      <div class="skill-name">Angular</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="90"></div></div>
+      <div class="skill-pct">90%</div>
     </div>
-    <div class="skills-grid">
-      <div class="reveal">
-        <div class="skill-category-title">
-          <div class="cat-icon">🎨</div>
-          <span data-en="Frontend Development" data-ar="تطوير الواجهة الأمامية">Frontend Development</span>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">Angular</span><span class="skill-bar-pct">85%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">HTML / CSS</span><span class="skill-bar-pct">92%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="92"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-pct">82%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="82"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">Bootstrap / Tailwind</span><span class="skill-bar-pct">88%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">Unit Testing</span><span class="skill-bar-pct">70%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="70"></div></div>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag"><span class="tech-tag-icon">🅰️</span> Angular</span>
-          <span class="tech-tag"><span class="tech-tag-icon">🌐</span> HTML5</span>
-          <span class="tech-tag"><span class="tech-tag-icon">🎨</span> CSS3</span>
-          <span class="tech-tag"><span class="tech-tag-icon">⚡</span> JavaScript</span>
-          <span class="tech-tag"><span class="tech-tag-icon">🅱️</span> Bootstrap</span>
-          <span class="tech-tag"><span class="tech-tag-icon">💨</span> Tailwind</span>
-          <span class="tech-tag"><span class="tech-tag-icon">☁️</span> Azure</span>
-          <span class="tech-tag"><span class="tech-tag-icon">🤖</span> AI Tools</span>
-        </div>
-      </div>
-      <div>
-        <div class="skill-category-title">
-          <div class="cat-icon">⚡</div>
-          <span data-en="Angular Ecosystem" data-ar="بيئة Angular">Angular Ecosystem</span>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">Angular</span><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">TypeScript</span><span class="skill-bar-pct">88%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">Reactive Forms</span><span class="skill-bar-pct">84%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="84"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-top"><span class="skill-bar-name">Angular Material</span><span class="skill-bar-pct">80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag"><span class="tech-tag-icon">🅰️</span> Angular</span>
-          <span class="tech-tag"><span class="tech-tag-icon">📦</span> TypeScript</span>
-          <span class="tech-tag"><span class="tech-tag-icon">🎨</span> CSS3</span>
-          <span class="tech-tag"><span class="tech-tag-icon">🌐</span> HTML5</span>
-          <span class="tech-tag"><span class="tech-tag-icon">⚡</span> RxJS</span>
-          <span class="tech-tag"><span class="tech-tag-icon">📱</span> Responsive UI</span>
-        </div>
-      </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">HTML / CSS</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="92"></div></div>
+      <div class="skill-pct">92%</div>
     </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">⚡</div>
+      <div class="skill-name">JavaScript</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="82"></div></div>
+      <div class="skill-pct">82%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📦</div>
+      <div class="skill-name">TypeScript</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="88"></div></div>
+      <div class="skill-pct">88%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🎨</div>
+      <div class="skill-name">Bootstrap / Tailwind</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="88"></div></div>
+      <div class="skill-pct">88%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🔄</div>
+      <div class="skill-name">RxJS</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="80"></div></div>
+      <div class="skill-pct">80%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📱</div>
+      <div class="skill-name">Responsive Design</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="90"></div></div>
+      <div class="skill-pct">90%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-name">Azure DevOps</div>
+      <div class="progress-bar"><div class="progress-fill" data-pct="70"></div></div>
+      <div class="skill-pct">70%</div>
+    </div>
+  </div>
+ 
+  <div class="tech-cloud reveal" style="margin-top:40px">
+    <span class="tech-pill" style="animation-delay:.0s;color:var(--accent1)">🅰️ Angular</span>
+    <span class="tech-pill" style="animation-delay:.15s;color:var(--accent2)">🌐 HTML5</span>
+    <span class="tech-pill" style="animation-delay:.3s;color:var(--accent3)">🎨 CSS3</span>
+    <span class="tech-pill" style="animation-delay:.45s;color:#c9860a">⚡ JavaScript</span>
+    <span class="tech-pill" style="animation-delay:.6s;color:var(--accent4)">📦 TypeScript</span>
+    <span class="tech-pill" style="animation-delay:.75s;color:var(--accent6)">🅱️ Bootstrap</span>
+    <span class="tech-pill" style="animation-delay:.9s;color:var(--accent2)">💨 Tailwind</span>
+    <span class="tech-pill" style="animation-delay:1.05s;color:var(--accent7)">☁️ Azure</span>
+    <span class="tech-pill" style="animation-delay:1.2s;color:var(--accent8)">🤖 AI Tools</span>
+    <span class="tech-pill" style="animation-delay:1.35s;color:var(--accent4)">📱 Responsive UI</span>
+    <span class="tech-pill" style="animation-delay:1.5s;color:var(--accent1)">⚛️ RxJS</span>
+    <span class="tech-pill" style="animation-delay:1.65s;color:var(--accent6)">🧪 Unit Testing</span>
   </div>
 </section>
  
-<!-- ===================== EXPERIENCE ===================== -->
+<!-- ══════════════════════════════
+     EXPERIENCE
+══════════════════════════════ -->
 <section id="experience">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag" data-en="Experience" data-ar="الخبرة">Experience</div>
-      <h2 class="section-title" data-en="Work <span>Journey</span>" data-ar="مسيرتي <span>المهنية</span>">Work <span>Journey</span></h2>
+  <div class="blob" style="width:320px;height:320px;background:var(--accent5);top:-40px;left:-40px;animation-delay:2s"></div>
+ 
+  <div class="section-label reveal">Journey</div>
+  <h2 class="section-title reveal">Work Experience</h2>
+ 
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-date">2024 – Present</div>
+        <div class="tl-title">Angular Frontend Engineer</div>
+        <div class="tl-company">Sieraj Software Company – Cairo, Maadi</div>
+        <div class="tl-desc">Collaborating on frontend Angular applications, building clean UI components, and refining user interactions within production projects. Working with Agile methodologies and Azure DevOps.</div>
+        <div class="tag-row">
+          <span class="tag">Angular</span>
+          <span class="tag">Frontend</span>
+          <span class="tag">UI</span>
+          <span class="tag">Agile</span>
+          <span class="tag">Azure</span>
+        </div>
+      </div>
     </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date" data-en="2024 – Present" data-ar="2024 – حتى الآن">2024 – Present</div>
-        <div class="timeline-card">
-          <div class="timeline-role" data-en="Angular Frontend Engineer" data-ar="مهندس واجهات Angular">Angular Frontend Engineer</div>
-          <div class="timeline-company" data-en="Sieraj Software Company – Cairo, Maadi" data-ar="شركة سراج للبرمجيات – القاهرة، المعادي">Sieraj Software Company – Cairo, Maadi</div>
-          <div class="timeline-desc" data-en="Collaborating on frontend Angular applications, building clean UI components, and refining user interactions within production projects." data-ar="التعاون في تطبيقات واجهة Angular، وبناء مكونات واجهة نظيفة، وتحسين تفاعلات المستخدم ضمن مشاريع إنتاجية.">Collaborating on frontend Angular applications, building clean UI components, and refining user interactions within production projects.</div>
-          <div class="timeline-tags">
-            <span class="t-tag">Angular</span>
-            <span class="t-tag">Frontend</span>
-            <span class="t-tag">UI</span>
-            <span class="t-tag">Agile</span>
-            <span class="t-tag">Azure</span>
-          </div>
+ 
+    <div class="tl-item reveal">
+      <div class="tl-dot" style="background:var(--accent2);box-shadow:0 0 0 3px var(--accent2)"></div>
+      <div class="tl-card">
+        <div class="tl-date" style="color:var(--accent2)">2023 – 2024</div>
+        <div class="tl-title">Frontend Trainee</div>
+        <div class="tl-company">Route Academy – Online</div>
+        <div class="tl-desc">Completed an intensive Angular and frontend development bootcamp. Built projects focused on responsive UI, component architecture, and modern web design practices.</div>
+        <div class="tag-row">
+          <span class="tag" style="background:rgba(0,180,216,.12);color:#007090">HTML/CSS/JS</span>
+          <span class="tag" style="background:rgba(0,180,216,.12);color:#007090">Angular</span>
+          <span class="tag" style="background:rgba(0,180,216,.12);color:#007090">Responsive</span>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date" data-en="2023 – 2024" data-ar="2023 – 2024">2023 – 2024</div>
-        <div class="timeline-card">
-          <div class="timeline-role" data-en="Frontend Trainee" data-ar="متدرب واجهات">Frontend Trainee</div>
-          <div class="timeline-company" data-en="Route Academy – Online" data-ar="روت أكاديمي – أونلاين">Route Academy – Online</div>
-          <div class="timeline-desc" data-en="Completed an intensive Angular and frontend development bootcamp. Built projects focused on responsive UI, component architecture, and modern web design." data-ar="أكملت بوتكامب مكثف لتطوير Angular والواجهة الأمامية. بنيت مشاريع تركّز على واجهات متجاوبة وهندسة مكونات وتصميم ويب حديث.">Completed an intensive Angular and frontend development bootcamp. Built projects focused on responsive UI, component architecture, and modern web design.</div>
-          <div class="timeline-tags">
-            <span class="t-tag">HTML/CSS/JS</span>
-            <span class="t-tag">Angular</span>
-            <span class="t-tag">UI</span>
-            <span class="t-tag">Responsive</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date" data-en="2023" data-ar="2023">2023</div>
-        <div class="timeline-card">
-          <div class="timeline-role" data-en="ITI Trainee" data-ar="متدرب ITI">ITI Trainee</div>
-          <div class="timeline-company" data-en="Information Technology Institute (ITI)" data-ar="معهد تكنولوجيا المعلومات (ITI)">Information Technology Institute (ITI)</div>
-          <div class="timeline-desc" data-en="Received training from Egypt's premier IT institute, gaining foundational and advanced skills in software development and earned ITI certification." data-ar="تلقيت تدريباً من معهد تكنولوجيا المعلومات المرموق في مصر، واكتسبت مهارات أساسية ومتقدمة في تطوير البرمجيات وحصلت على شهادة ITI.">Received training from Egypt's premier IT institute, gaining foundational and advanced skills in software development and earned ITI certification.</div>
-          <div class="timeline-tags">
-            <span class="t-tag">Web Development</span>
-            <span class="t-tag">Programming</span>
-          </div>
+    </div>
+ 
+    <div class="tl-item reveal">
+      <div class="tl-dot" style="background:var(--accent6);box-shadow:0 0 0 3px var(--accent6)"></div>
+      <div class="tl-card">
+        <div class="tl-date" style="color:var(--accent6)">2023</div>
+        <div class="tl-title">ITI Trainee</div>
+        <div class="tl-company">Information Technology Institute (ITI)</div>
+        <div class="tl-desc">Training from Egypt's premier IT institute, gaining foundational and advanced skills in software development and earned ITI certification.</div>
+        <div class="tag-row">
+          <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Web Development</span>
+          <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Programming</span>
         </div>
       </div>
     </div>
   </div>
 </section>
  
-<!-- ===================== PROJECTS ===================== -->
+<!-- ══════════════════════════════
+     PROJECTS
+══════════════════════════════ -->
 <section id="projects">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag" data-en="Projects" data-ar="المشاريع">Projects</div>
-      <h2 class="section-title" data-en="Featured <span>Work</span>" data-ar="الأعمال <span>المميزة</span>">Featured <span>Work</span></h2>
-      <p class="section-desc" data-en="A selection of real-world projects built with modern technologies." data-ar="مجموعة من المشاريع الحقيقية المبنية بتقنيات حديثة.">A selection of real-world projects built with modern technologies.</p>
+  <div class="blob" style="width:360px;height:360px;background:var(--accent6);top:-50px;right:-50px;animation-delay:.8s"></div>
+ 
+  <div class="section-label reveal">Portfolio</div>
+  <h2 class="section-title reveal">Featured Work</h2>
+ 
+  <div class="proj-grid">
+    <div class="proj-card reveal">
+      <div class="proj-thumb pt1">🛒</div>
+      <div class="proj-body">
+        <div class="proj-cat">Frontend</div>
+        <div class="proj-title">E-Commerce Platform</div>
+        <div class="proj-desc">An Angular frontend application with a polished product catalog, cart experience, and fully responsive UI design optimized for all devices.</div>
+        <div class="proj-footer">
+          <div class="tag-row">
+            <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Angular</span>
+            <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">MongoDB</span>
+          </div>
+          <a href="https://github.com/mu1rr11r" target="_blank" class="proj-link">GitHub →</a>
+        </div>
+      </div>
     </div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-preview">🛒</div>
-        <div class="project-body">
-          <div class="project-type" data-en="Frontend" data-ar="الواجهة الأمامية">Frontend</div>
-          <div class="project-name" data-en="E-Commerce Platform" data-ar="منصة التجارة الإلكترونية">E-Commerce Platform</div>
-          <div class="project-desc" data-en="An Angular frontend application with a polished product catalog, cart experience, and responsive UI design." data-ar="تطبيق واجهة أمامية باستخدام Angular مع كتالوج منتجات مصقول وتجربة سلة متجاوبة.">An Angular frontend application with a polished product catalog, cart experience, and responsive UI design.</div>
-          <div class="project-stack">
-            <span class="stack-tag">Angular</span><span class="stack-tag">Node.js</span>
-            <span class="stack-tag">MongoDB</span><span class="stack-tag">Express</span>
+ 
+    <div class="proj-card reveal">
+      <div class="proj-thumb pt2">🎓</div>
+      <div class="proj-body">
+        <div class="proj-cat">Frontend</div>
+        <div class="proj-title">Educational Platform</div>
+        <div class="proj-desc">Angular frontend platform with course pages, responsive layout, and clean user interactions. Built with Tailwind CSS for modern styling.</div>
+        <div class="proj-footer">
+          <div class="tag-row">
+            <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Angular</span>
+            <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Tailwind</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/mu1rr11r" target="_blank" class="project-link primary" data-en="GitHub →" data-ar="GitHub →">GitHub →</a>
-          </div>
+          <a href="https://github.com/mu1rr11r" target="_blank" class="proj-link">GitHub →</a>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-preview">🎓</div>
-        <div class="project-body">
-          <div class="project-type" data-en="Frontend" data-ar="الواجهة الأمامية">Frontend</div>
-          <div class="project-name" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</div>
-          <div class="project-desc" data-en="Angular frontend platform with course pages, responsive layout, and clean user interactions." data-ar="منصة واجهة أمامية باستخدام Angular مع صفحات الدورة وتخطيط متجاوب وتفاعلات مستخدم نظيفة.">Angular frontend platform with course pages, responsive layout, and clean user interactions.</div>
-          <div class="project-stack">
-            <span class="stack-tag">Angular</span><span class="stack-tag">Node.js</span>
-            <span class="stack-tag">MongoDB</span><span class="stack-tag">Tailwind</span>
+    </div>
+ 
+    <div class="proj-card reveal">
+      <div class="proj-thumb pt3">🏢</div>
+      <div class="proj-body">
+        <div class="proj-cat">Angular UI</div>
+        <div class="proj-title">Enterprise Solutions</div>
+        <div class="proj-desc">Angular user interfaces built for enterprise workflows and clean product experiences at Sieraj Software Company.</div>
+        <div class="proj-footer">
+          <div class="tag-row">
+            <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Angular</span>
+            <span class="tag" style="background:rgba(155,93,229,.12);color:#6030b0">Azure</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/mu1rr11r" target="_blank" class="project-link primary" data-en="GitHub →" data-ar="GitHub →">GitHub →</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-preview">🏢</div>
-        <div class="project-body">
-          <div class="project-type" data-en="Angular UI" data-ar="واجهة Angular">Angular UI</div>
-          <div class="project-name" data-en="Enterprise Solutions" data-ar="حلول المؤسسات">Enterprise Solutions</div>
-          <div class="project-desc" data-en="Angular user interfaces built for enterprise workflows and clean product experiences." data-ar="واجهات مستخدم Angular مصممة لسير عمل المؤسسات وتجارب منتج نظيفة.">Angular user interfaces built for enterprise workflows and clean product experiences.</div>
-          <div class="project-stack">
-            <span class="stack-tag">Angular</span><span class="stack-tag">Azure</span>
-            <span class="stack-tag">DevOps</span><span class="stack-tag">Agile</span>
-          </div>
-          <div class="project-links">
-            <a href="https://www.sieraj.com/" target="_blank" class="project-link primary" data-en="Company →" data-ar="الشركة →">Company →</a>
-          </div>
+          <a href="https://www.sieraj.com/" target="_blank" class="proj-link">Company →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
  
-<!-- ===================== CERTIFICATES ===================== -->
+<!-- ══════════════════════════════
+     CERTIFICATES
+══════════════════════════════ -->
 <section id="certificates">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag" data-en="Certificates" data-ar="الشهادات">Certificates</div>
-      <h2 class="section-title" data-en="My <span>Credentials</span>" data-ar="اعتماداتي <span>المهنية</span>">My <span>Credentials</span></h2>
+  <div class="blob" style="width:300px;height:300px;background:var(--accent7);bottom:-40px;right:-40px;animation-delay:1.2s"></div>
+ 
+  <div class="section-label reveal">Credentials</div>
+  <h2 class="section-title reveal">My Certificates</h2>
+ 
+  <div class="cert-grid">
+    <div class="cert-card reveal">
+      <div class="cert-badge cb1">🎯</div>
+      <div class="cert-org">Route Academy</div>
+      <div class="cert-name">Full Stack Web Development</div>
+      <div class="cert-year">2024</div>
+      <a href="https://www.facebook.com/Routelearning" target="_blank" class="cert-link">View Issuer →</a>
+      <div class="cert-ribbon">2024</div>
     </div>
-    <div class="certs-grid">
-      <div class="cert-card">
-        <div class="cert-logo">🎯</div>
-        <div>
-          <div class="cert-issuer" data-en="Route Academy" data-ar="روت أكاديمي">Route Academy</div>
-          <div class="cert-name" data-en="Full Stack Web Development" data-ar="تطوير الويب المتكامل (Full Stack)">Full Stack Web Development</div>
-        </div>
-        <div class="cert-date">2024</div>
-        <a href="https://www.facebook.com/Routelearning" target="_blank" class="cert-link">
-          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
-        </a>
-      </div>
-      <div class="cert-card">
-        <div class="cert-logo">🏛️</div>
-        <div>
-          <div class="cert-issuer" data-en="Information Technology Institute" data-ar="معهد تكنولوجيا المعلومات">Information Technology Institute</div>
-          <div class="cert-name" data-en="ITI Professional Certificate" data-ar="شهادة ITI المهنية">ITI Professional Certificate</div>
-        </div>
-        <div class="cert-date">2023</div>
-        <a href="https://iti.gov.eg" target="_blank" class="cert-link">
-          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
-        </a>
-      </div>
-      <div class="cert-card">
-        <div class="cert-logo">⭐</div>
-        <div>
-          <div class="cert-issuer" data-en="Sieraj Software Company" data-ar="شركة سراج للبرمجيات">Sieraj Software Company</div>
-          <div class="cert-name" data-en="Software Development Certificate I" data-ar="شهادة تطوير البرمجيات I">Software Development Certificate I</div>
-        </div>
-        <div class="cert-date">2023</div>
-        <a href="https://www.sieraj.com/" target="_blank" class="cert-link">
-          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
-        </a>
-      </div>
-      <div class="cert-card">
-        <div class="cert-logo">🌟</div>
-        <div>
-          <div class="cert-issuer" data-en="Sieraj Software Company" data-ar="شركة سراج للبرمجيات">Sieraj Software Company</div>
-          <div class="cert-name" data-en="Software Development Certificate II" data-ar="شهادة تطوير البرمجيات II">Software Development Certificate II</div>
-        </div>
-        <div class="cert-date">2024</div>
-        <a href="https://www.sieraj.com/" target="_blank" class="cert-link">
-          <span data-en="View Issuer →" data-ar="عرض المُصدر →">View Issuer →</span>
-        </a>
-      </div>
+ 
+    <div class="cert-card reveal">
+      <div class="cert-badge cb2">🏛️</div>
+      <div class="cert-org">ITI</div>
+      <div class="cert-name">ITI Professional Certificate</div>
+      <div class="cert-year">2023</div>
+      <a href="https://iti.gov.eg/" target="_blank" class="cert-link">View Issuer →</a>
+    </div>
+ 
+    <div class="cert-card reveal">
+      <div class="cert-badge" style="background:rgba(249,65,68,.12)">⭐</div>
+      <div class="cert-org">Sieraj Software Company</div>
+      <div class="cert-name">Software Development Certificate I</div>
+      <div class="cert-year">2023</div>
+      <a href="https://www.sieraj.com/" target="_blank" class="cert-link">View Issuer →</a>
+    </div>
+ 
+    <div class="cert-card reveal">
+      <div class="cert-badge" style="background:rgba(155,93,229,.12)">🌟</div>
+      <div class="cert-org">Sieraj Software Company</div>
+      <div class="cert-name">Software Development Certificate II</div>
+      <div class="cert-year">2024</div>
+      <a href="https://www.sieraj.com/" target="_blank" class="cert-link">View Issuer →</a>
+      <div class="cert-ribbon" style="background:var(--accent6)">2024</div>
+    </div>
+  </div>
+ 
+  <h3 class="section-title reveal" style="font-size:1.8rem;margin-top:60px">Achievements</h3>
+  <div class="ach-grid">
+    <div class="ach-card reveal">
+      <div class="ach-icon">🥉</div>
+      <div class="ach-title">3rd Place – Automation</div>
+      <div class="ach-desc">Achieved third place in the Automation field competition, demonstrating expertise in automated systems and workflows.</div>
+    </div>
+    <div class="ach-card reveal">
+      <div class="ach-icon">🎓</div>
+      <div class="ach-title">Excellent Graduation Grade</div>
+      <div class="ach-desc">Earned an Excellent grade in the graduation project, showcasing advanced technical skills and problem-solving abilities.</div>
+    </div>
+    <div class="ach-card reveal">
+      <div class="ach-icon">🚀</div>
+      <div class="ach-title">Real-World Projects</div>
+      <div class="ach-desc">Successfully built and delivered real-world projects at Sieraj Software Company, impacting actual users and business operations.</div>
     </div>
   </div>
 </section>
  
-<!-- ===================== ACHIEVEMENTS ===================== -->
-<section id="achievements" style="background:var(--bg2)">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag" data-en="Achievements" data-ar="الإنجازات">Achievements</div>
-      <h2 class="section-title" data-en="<span>Proud</span> Moments" data-ar="لحظات <span>فخر</span>"><span>Proud</span> Moments</h2>
-    </div>
-    <div class="achieve-grid">
-      <div class="achieve-card">
-        <div class="achieve-icon">🥉</div>
-        <div class="achieve-title" data-en="3rd Place – Automation" data-ar="المركز الثالث – الأتمتة">3rd Place – Automation</div>
-        <div class="achieve-desc" data-en="Achieved third place in the Automation field competition, demonstrating expertise in automated systems and workflows." data-ar="حصلت على المركز الثالث في مسابقة مجال الأتمتة، مما يُظهر الخبرة في الأنظمة والسير المؤتمتة.">Achieved third place in the Automation field competition, demonstrating expertise in automated systems and workflows.</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-icon">🎓</div>
-        <div class="achieve-title" data-en="Excellent Graduation Grade" data-ar="درجة تخرج ممتازة">Excellent Graduation Grade</div>
-        <div class="achieve-desc" data-en="Earned an Excellent grade in the graduation project, showcasing advanced technical skills and problem-solving abilities." data-ar="حصلت على درجة ممتازة في مشروع التخرج، مما يُبرز المهارات التقنية المتقدمة وقدرات حل المشكلات.">Earned an Excellent grade in the graduation project, showcasing advanced technical skills and problem-solving abilities.</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-icon">🚀</div>
-        <div class="achieve-title" data-en="Real-World Projects" data-ar="مشاريع حقيقية">Real-World Projects</div>
-        <div class="achieve-desc" data-en="Successfully built and delivered real-world projects at Sieraj Software Company, impacting actual users and business operations." data-ar="بنيت وسلّمت بنجاح مشاريع حقيقية في شركة سراج للبرمجيات، مما أثّر في المستخدمين الفعليين وعمليات الأعمال.">Successfully built and delivered real-world projects at Sieraj Software Company, impacting actual users and business operations.</div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- ===================== CONTACT ===================== -->
+<!-- ══════════════════════════════
+     CONTACT
+══════════════════════════════ -->
 <section id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="section-tag" data-en="Contact" data-ar="تواصل">Contact</div>
-        <div class="contact-info">
-          <h3 data-en="Let's Build Something <span style='background:linear-gradient(135deg,var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent'>Amazing</span>" data-ar="لنبني شيئاً <span style='background:linear-gradient(135deg,var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent'>رائعاً</span> معاً">Let's Build Something <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent">Amazing</span></h3>
-          <p data-en="Open to exciting opportunities, collaborations, and freelance projects. Drop me a message!" data-ar="أنا منفتح على الفرص المثيرة والتعاون والمشاريع المستقلة. أرسل لي رسالة!">Open to exciting opportunities, collaborations, and freelance projects. Drop me a message!</p>
-        </div>
-        <div class="contact-links">
-          <a href="tel:01141179106" class="contact-link-item">
-            <div class="cl-icon">📞</div>
-            <div><div class="cl-text">01141179106</div><div class="cl-sub" data-en="Phone" data-ar="الهاتف">Phone</div></div>
-          </a>
-          <a href="https://github.com/mu1rr11r" target="_blank" class="contact-link-item">
-            <div class="cl-icon">🐙</div>
-            <div><div class="cl-text">github.com/mu1rr11r</div><div class="cl-sub">GitHub</div></div>
-          </a>
-          <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="contact-link-item">
-            <div class="cl-icon">💼</div>
-            <div><div class="cl-text">Moutasem Mahmoud</div><div class="cl-sub">LinkedIn</div></div>
-          </a>
-          <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="contact-link-item">
-            <div class="cl-icon">📘</div>
-            <div><div class="cl-text">moutasem.mahmoud</div><div class="cl-sub">Facebook</div></div>
-          </a>
-        </div>
+  <div class="blob" style="width:400px;height:400px;background:var(--accent8);top:-60px;left:-60px;animation-delay:.3s"></div>
+ 
+  <div class="section-label reveal">Say Hello</div>
+  <h2 class="section-title reveal">Let's Build Something<br>Amazing</h2>
+ 
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Open to Opportunities</h3>
+      <p>I'm open to exciting opportunities, collaborations, and freelance projects. Drop me a message and let's create something remarkable together!</p>
+ 
+      <div class="contact-links">
+        <a href="tel:01141179106" class="contact-link">
+          <div class="cl-icon cli1">📞</div>
+          <div class="cl-info">
+            <span class="cl-label">Phone</span>
+            <span class="cl-val">01141179106</span>
+          </div>
+        </a>
+        <a href="https://github.com/mu1rr11r" target="_blank" class="contact-link">
+          <div class="cl-icon cli2">🐙</div>
+          <div class="cl-info">
+            <span class="cl-label">GitHub</span>
+            <span class="cl-val">github.com/mu1rr11r</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="contact-link">
+          <div class="cl-icon cli3">💼</div>
+          <div class="cl-info">
+            <span class="cl-label">LinkedIn</span>
+            <span class="cl-val">Moutasem Mahmoud</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="contact-link">
+          <div class="cl-icon cli4">📘</div>
+          <div class="cl-info">
+            <span class="cl-label">Facebook</span>
+            <span class="cl-val">moutasem.mahmoud</span>
+          </div>
+        </a>
       </div>
-      <div class="reveal">
-        <div class="contact-form">
-          <div class="form-group">
-            <label class="form-label" data-en="Your Name" data-ar="اسمك">Your Name</label>
-            <input type="text" class="form-input" id="form-name" data-placeholder-en="John Doe" data-placeholder-ar="أحمد محمد" placeholder="John Doe">
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
-            <input type="email" class="form-input" id="form-email" data-placeholder-en="john@example.com" data-placeholder-ar="ahmed@example.com" placeholder="john@example.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label" data-en="Message" data-ar="الرسالة">Message</label>
-            <textarea class="form-input" id="form-msg" rows="5" data-placeholder-en="Tell me about your project..." data-placeholder-ar="أخبرني عن مشروعك..." placeholder="Tell me about your project..."></textarea>
-          </div>
-          <button class="form-submit" id="form-submit">
-            <span data-en="Send Message ✉️" data-ar="إرسال الرسالة ✉️">Send Message ✉️</span>
-          </button>
-          <div class="form-success" id="form-success">
-            ✅ <span data-en="Message sent! I'll be in touch soon." data-ar="تم إرسال الرسالة! سأتواصل معك قريباً.">Message sent! I'll be in touch soon.</span>
-          </div>
+    </div>
+ 
+    <div class="contact-form reveal">
+      <div id="formContent">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="fname" placeholder="John Doe">
         </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="femail" placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="fmsg" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendMsg()">
+          Send Message ✉️
+        </button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">🎉</div>
+        <h3>Message Sent!</h3>
+        <p style="color:#666;margin-top:8px">Thanks for reaching out. I'll get back to you soon!</p>
       </div>
     </div>
   </div>
 </section>
  
-<!-- ===================== FOOTER ===================== -->
+<!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">MM.</div>
-    <div class="footer-copy" data-en="© 2025 Moutasem Mahmoud. Crafted with ❤️ in Egypt" data-ar="© 2025 معتصم محمود. صُنع بـ ❤️ في مصر">© 2025 Moutasem Mahmoud. Crafted with ❤️ in Egypt</div>
-    <div class="footer-socials">
-      <a href="https://github.com/mu1rr11r" target="_blank" class="social-link" title="GitHub">🐙</a>
-      <a href="https://www.linkedin.com/in/moutasem-mahmoud-278a84338/" target="_blank" class="social-link" title="LinkedIn">💼</a>
-      <a href="https://www.facebook.com/moutasem.mahmoud.el.shimey" target="_blank" class="social-link" title="Facebook">📘</a>
-    </div>
-  </div>
+  <p>Designed & Built by <span>Moutasem Mahmoud</span> · Frontend Angular Developer · Egypt 🇪🇬</p>
 </footer>
-<button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+ 
+<!-- scroll to top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
  
 <script src="./index.js"></script>
 </body>
