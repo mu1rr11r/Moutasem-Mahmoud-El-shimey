@@ -83,8 +83,15 @@ setTimeout(animateCounters, 800);
  
 /* ─── SCROLL TO TOP ─── */
 const scrollTopBtn = document.getElementById('scrollTop');
+const scrollFill = document.querySelector('.scroll-progress-fill');
 window.addEventListener('scroll',()=>{
   scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+  if(scrollFill){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollFill.style.width = pct + '%';
+  }
 });
  
 /* ─── NAV ACTIVE LINK ─── */
@@ -100,6 +107,19 @@ window.addEventListener('scroll',()=>{
     a.style.color = a.getAttribute('href')==='#'+cur ? '#fff' : '';
   });
 });
+
+function splitHeroText(){
+  const heroRole = document.querySelector('.hero-role.text-reveal');
+  if(heroRole){
+    const words = heroRole.textContent.trim().split(/\s+/);
+    heroRole.innerHTML = words.map((word, idx)=>`<span style="animation-delay:${idx * 80 + 180}ms">${word}</span>`).join(' ');
+  }
+  document.querySelectorAll('.hero-name .word').forEach((span, idx)=>{
+    span.style.animationDelay = `${idx * 120 + 120}ms`;
+  });
+}
+
+window.addEventListener('load', splitHeroText);
  
 /* ─── FORM ─── */
 function sendMsg(){

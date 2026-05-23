@@ -38,11 +38,16 @@
   </script>
 
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.4/css/all.min.css" integrity="sha512-P4KqUDkHjQ+IsNQt+zJ5PLSvUxJY8ltzNo6zFs1q+SZjyw6Wq0I+Oui1ypW4xJ1EN+3H+DjD2G7mAZ1iezXSfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/></head>
 <body>
  <!-- page transition -->
 <div class="page-transition"></div>
+ 
+<!-- top scroll progress -->
+<div class="scroll-progress"><div class="scroll-progress-fill"></div></div>
  
 <!-- particle canvas -->
 <canvas id="particleCanvas"></canvas>
@@ -72,11 +77,12 @@
  
   <div class="hero-eyebrow">Available for Work</div>
  
-  <div class="hero-name">
-    Moutasem<br><span>Mahmoud</span>
+  <div class="hero-name text-reveal">
+    <span class="word">Moutasem</span><br>
+    <span class="word">Mahmoud</span>
   </div>
  
-  <div class="hero-role">Frontend Angular Developer — Building Remarkable Interfaces</div>
+  <div class="hero-role text-reveal" data-direction="left">Frontend Angular Developer — Building Remarkable Interfaces</div>
  
   <div class="hero-btns">
     <a href="#projects" class="btn btn-primary">View My Work →</a>
@@ -102,10 +108,19 @@
   <!-- Hero graphic -->
   <div class="hero-graphic">
     <div class="avatar-ring" style="position:relative">
-      <div class="avatar-inner">MM</div>
-      <div class="float-tag ft1">🅰️ Angular Expert</div>
-      <div class="float-tag ft2">⚡ TypeScript</div>
-      <div class="float-tag ft3">🎨 UI / UX</div>
+      <div class="avatar-inner"><img src="./image/WhatsApp Image 2026-05-23 at 11.56.50 PM.jpeg" alt=""></div>
+<div class="float-tag ft1">
+  <i class="fa-brands fa-angular"></i>
+  Angular 
+</div> 
+<div class="float-tag ft2">
+  <i class="fa-solid fa-code"></i>
+  TypeScript
+</div>    
+      <div class="float-tag ft3">
+  <i class="fa-brands fa-figma"></i>
+   UI / UX
+</div>
     </div>
   </div>
 </section>
@@ -218,31 +233,31 @@
  
   <div class="skills-grid" id="skillsGrid">
     <div class="skill-card reveal">
-      <div class="skill-icon">🅰️</div>
+      <div class="skill-icon"><i class="fa-brands fa-angular"></i></div>
       <div class="skill-name">Angular</div>
       <div class="progress-bar"><div class="progress-fill" data-pct="90"></div></div>
       <div class="skill-pct">90%</div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">🌐</div>
+      <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
       <div class="skill-name">HTML / CSS</div>
       <div class="progress-bar"><div class="progress-fill" data-pct="92"></div></div>
       <div class="skill-pct">92%</div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">⚡</div>
+      <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
       <div class="skill-name">JavaScript</div>
       <div class="progress-bar"><div class="progress-fill" data-pct="82"></div></div>
       <div class="skill-pct">82%</div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">📦</div>
+      <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
       <div class="skill-name">TypeScript</div>
       <div class="progress-bar"><div class="progress-fill" data-pct="88"></div></div>
       <div class="skill-pct">88%</div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">🎨</div>
+      <div class="skill-icon"><i class="fa-solid fa-bezier-curve"></i></div>
       <div class="skill-name">Bootstrap / Tailwind</div>
       <div class="progress-bar"><div class="progress-fill" data-pct="88"></div></div>
       <div class="skill-pct">88%</div>
