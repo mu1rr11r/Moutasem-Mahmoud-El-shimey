@@ -48,6 +48,7 @@
     <img src="https://picsum.photos/seed/moutasem-code-desk/1920/1080.jpg" alt="Developer workspace"/>
   </div>
   <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
   <div class="hero-content">
     <div class="hero-eyebrow"><span></span>Front-End Angular Developer</div>
     <h1 class="hero-title">Moutasem<br><em>Mahmoud</em></h1>
@@ -75,7 +76,9 @@
     <h2 class="sec-heading rv">Crafting Interfaces <em>That Matter</em></h2>
     <div class="about-grid">
       <div class="about-image rv-l">
-        <img src="https://picsum.photos/seed/moutasem-portrait-dev/800/1100.jpg" alt="Moutasem Mahmoud"/>
+        <div class="about-image-frame">
+          <img src="https://picsum.photos/seed/moutasem-portrait-dev/800/1100.jpg" alt="Moutasem Mahmoud"/>
+        </div>
         <div class="about-image-caption">Front-End Angular Developer · Cairo</div>
       </div>
       <div class="about-text rv-r">
@@ -89,7 +92,7 @@
             <div class="about-val-label">Year at Sieraj</div>
           </div>
           <div class="about-val rv">
-            <div class="about-val-num" data-target="5">0</div>
+            <div class="about-val-num" data-target="6">0</div>
             <div class="about-val-label">Projects</div>
           </div>
           <div class="about-val rv">
@@ -127,6 +130,8 @@
         <span class="skill-tag">CSS3</span>
         <span class="skill-tag">RxJS</span>
         <span class="skill-tag">RESTful APIs</span>
+        <span class="skill-tag">Signals</span>
+        <span class="skill-tag">Standalone Components</span>
       </div>
     </div>
     <div class="skill-card rv">
@@ -142,8 +147,6 @@
       <div class="skill-card-icon"><i class="fa-solid fa-layer-group"></i> Frameworks</div>
       <div class="skill-tags">
         <span class="skill-tag highlight">Angular 17+</span>
-        <span class="skill-tag">Signals</span>
-        <span class="skill-tag">Standalone Components</span>
         <span class="skill-tag">React Basics</span>
       </div>
     </div>
@@ -156,6 +159,8 @@
         <span class="skill-tag">Make.com</span>
         <span class="skill-tag">Zapier</span>
         <span class="skill-tag">Firebase</span>
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">DevOps</span>
       </div>
     </div>
   </div>
@@ -226,16 +231,20 @@
 
   <div class="projects-grid">
 
-    <div class="proj-card rv">
-      <div class="proj-img-wrap">
-        <img src="./image/ideoz.jpeg" alt="Ideoz AI"/>
-        <span class="proj-live-badge"><span class="live-dot"></span> Live</span>
-      </div>
-      <div class="proj-content">
-        <h3 class="proj-name">Ideoz AI</h3>
-        <p class="proj-desc">Developed and maintained front-end interfaces, integrated APIs, and improved performance and user experience for an AI-powered platform.</p>
-        <div class="proj-stack"><span>Angular 17+</span><span>TypeScript</span><span>Tailwind CSS</span><span>REST API</span></div>
-        <a href="https://ideoz.ai" target="_blank" class="proj-link">Visit Live Site <i class="fa-solid fa-arrow-right"></i></a>
+    <!-- Featured Project — Full Width -->
+    <div class="proj-card proj-featured rv">
+      <div class="proj-featured-inner">
+        <div class="proj-img-wrap">
+          <img src="./image/ideoz.jpeg" alt="Ideoz AI"/>
+          <span class="proj-live-badge"><span class="live-dot"></span> Live</span>
+        </div>
+        <div class="proj-content">
+          <div class="proj-label">Featured Project</div>
+          <h3 class="proj-name">Ideoz AI</h3>
+          <p class="proj-desc">Developed and maintained front-end interfaces, integrated APIs, and improved performance and user experience for an AI-powered platform.</p>
+          <div class="proj-stack"><span>Angular 17+</span><span>TypeScript</span><span>Tailwind CSS</span><span>REST API</span></div>
+          <a href="https://ideoz.ai" target="_blank" class="proj-link">Visit Live Site <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
 
@@ -279,16 +288,28 @@
     <div class="proj-card rv">
       <div class="proj-img-wrap">
         <img src="./image/4C-ASSD.jpeg" alt="4C Construction Website"/>
+        <span class="proj-live-badge"><span class="live-dot"></span> Live</span>
       </div>
       <div class="proj-content">
         <h3 class="proj-name">4C Construction Website</h3>
         <p class="proj-desc">Developed a responsive company website for a construction and interior decoration business. Showcases services, completed projects, client partners, contact information, and an inquiry form with a modern design.</p>
         <div class="proj-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span></div>
-              <a href="https://www.4cdecoration.com/" target="_blank" class="proj-link">Visit Live Site <i class="fa-solid fa-arrow-right"></i></a>
-
+        <a href="https://www.4cdecoration.com/" target="_blank" class="proj-link">Visit Live Site <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
 
+    <div class="proj-card rv">
+      <div class="proj-img-wrap">
+        <img src="./image/profile.jpeg" alt="Abdulrahman Murad Portfolio"/>
+        <span class="proj-live-badge"><span class="live-dot"></span> Live</span>
+      </div>
+      <div class="proj-content">
+        <h3 class="proj-name">Abdulrahman Murad Portfolio</h3>
+        <p class="proj-desc">Designed and developed a modern personal portfolio website for a graphic designer and photographer. The website showcases professional experience, creative services, skills, brand identity projects, social media designs, company profiles, and contact information through a clean and responsive user interface focused on visual presentation and user engagement.</p>
+        <div class="proj-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span><span>UI/UX</span></div>
+        <a href="https://murad-eta.vercel.app/" target="_blank" class="proj-link">Visit Live Site <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
 </section>
 
