@@ -340,61 +340,140 @@
   </div>
 </section>
 
-<!-- ═══════════════ EDUCATION & CERTS ═══════════════ -->
+
 <section id="education">
   <div class="sec-eyebrow rv">Education & Certifications</div>
   <h2 class="sec-heading rv">Credentials & <em>Learning</em></h2>
 
   <div class="edu-grid">
-    <div>
+    <div class="edu-left">
       <h3 class="edu-section-title rv">Education</h3>
+
       <div class="edu-card rv">
-        <div class="edu-degree">B.Sc. in Computer Science (Information Systems)</div>
-        <div class="edu-school"><i class="fa-solid fa-building-columns"></i> <strong>El Shorouk Academy</strong></div>
-        <div class="edu-meta">
-          <span><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</span>
-          <span><i class="fa-regular fa-calendar"></i> Expected 2026</span>
+        <div class="edu-card-icon" aria-hidden="true">
+          <i class="fa-solid fa-graduation-cap"></i>
         </div>
+        <div class="edu-card-content">
+          <span class="edu-kicker">Bachelor's Degree</span>
+          <h4 class="edu-degree">B.Sc. in Computer Science</h4>
+          <p class="edu-specialization">Information Systems</p>
+
+          <div class="edu-school">
+            <i class="fa-solid fa-building-columns"></i>
+            <strong>El Shorouk Academy</strong>
+          </div>
+
+          <div class="edu-meta">
+            <span><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</span>
+            <span><i class="fa-regular fa-calendar"></i> Graduated 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="edu-section-title rv graduation-title">
+        Graduation Photos
+      </h3>
+
+      <div class="graduation-gallery">
+        <button class="gallery-item rv" type="button" onclick="openEduImage(this)" aria-label="View graduation ceremony photo">
+          <img class="edu-source-image" src="./image/515973453_122178473258568690_837498391540051571_n.jpg" alt="Graduation ceremony">
+          <span class="edu-logo-preview"><i class="fa-solid fa-camera-retro"></i></span>
+          <span class="gallery-caption">
+            <span>Graduation Ceremony</span>
+            <small>View photo <i class="fa-solid fa-arrow-right"></i></small>
+          </span>
+        </button>
+
+        <button class="gallery-item rv" type="button" onclick="openEduImage(this)" aria-label="View personal graduation photo">
+          <img class="edu-source-image" src="./image/WhatsApp Image 2026-11-27 at 4.00.43 PM.jpeg" alt="Personal graduation photo">
+          <span class="edu-logo-preview"><i class="fa-solid fa-user-graduate"></i></span>
+          <span class="gallery-caption">
+            <span>Personal Photo</span>
+            <small>View photo <i class="fa-solid fa-arrow-right"></i></small>
+          </span>
+        </button>
       </div>
 
       <div class="lang-section rv">
         <h3 class="edu-section-title">Languages</h3>
         <div class="lang-grid">
-          <div class="lang-chip"><i class="fa-solid fa-globe"></i> Arabic <span class="lang-level">Native</span></div>
-          <div class="lang-chip"><i class="fa-solid fa-globe"></i> English <span class="lang-level">Professional</span></div>
+          <div class="lang-chip">
+            <i class="fa-solid fa-globe"></i>
+            <span>Arabic</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-chip">
+            <i class="fa-solid fa-globe"></i>
+            <span>English</span>
+            <span class="lang-level">Intermediate</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div>
-      <h3 class="edu-section-title rv">Certifications</h3>
-      <div class="cert-card rv">
-        <div class="cert-icon"><i class="fa-solid fa-route"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">Advanced Front-End Development Track</div>
-          <div class="cert-org">Route Academy</div>
-          <div class="cert-year"><i class="fa-regular fa-calendar"></i> 2024</div>
-        </div>
-      </div>
-      <div class="cert-card rv">
-        <div class="cert-icon"><i class="fa-solid fa-landmark"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">Intensive Training Program · Software Development</div>
-          <div class="cert-org">ITI — Information Technology Institute</div>
-          <div class="cert-year"><i class="fa-regular fa-calendar"></i> 2023</div>
-        </div>
-      </div>
-      <div class="cert-card rv">
-        <div class="cert-icon"><i class="fa-solid fa-star"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">Software Development Certificate</div>
-          <div class="cert-org">Sieraj Software Company</div>
-          <div class="cert-year"><i class="fa-regular fa-calendar"></i> 2023 – 2024</div>
-        </div>
+    <div class="edu-right">
+      <h3 class="edu-section-title rv">Training Certificates</h3>
+
+      <div class="cert-gallery">
+        <button class="cert-image rv" type="button" onclick="openEduImage(this)" aria-label="View certificate 1">
+          <img class="edu-source-image" src="./image/WhatsApp Image 2026-11-27 at 4.00.40 PM.jpeg" alt="Training certificate 1">
+          <span class="cert-logo-preview"><i class="fa-solid fa-award"></i></span>
+          <div class="cert-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>View Certificate</span>
+          </div>
+          <span class="cert-caption">Certificate 01</span>
+        </button>
+
+        <button class="cert-image rv" type="button" onclick="openEduImage(this)" aria-label="View certificate 2">
+          <img class="edu-source-image" src="./image/WhatsApp Image 2026-11-27 at 4.00.41 PM.jpeg" alt="Training certificate 2">
+          <span class="cert-logo-preview"><i class="fa-solid fa-code"></i></span>
+          <div class="cert-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>View Certificate</span>
+          </div>
+          <span class="cert-caption">Certificate 02</span>
+        </button>
+
+        <button class="cert-image rv" type="button" onclick="openEduImage(this)" aria-label="View certificate 3">
+          <img class="edu-source-image" src="./image/WhatsApp Image 2026-11-27 at 4.00.42 PM.jpeg" alt="Training certificate 3">
+          <span class="cert-logo-preview"><i class="fa-solid fa-laptop-code"></i></span>
+          <div class="cert-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>View Certificate</span>
+          </div>
+          <span class="cert-caption">Certificate 03</span>
+        </button>
+
+        <button class="cert-image rv" type="button" onclick="openEduImage(this)" aria-label="View certificate 4">
+          <img class="edu-source-image" src="./image/Image 2026-11-27 at 4.00.42 PM.jpeg" alt="Training certificate 4">
+          <span class="cert-logo-preview"><i class="fa-solid fa-certificate"></i></span>
+          <div class="cert-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>View Certificate</span>
+          </div>
+          <span class="cert-caption">Certificate 04</span>
+        </button>
+
+        <button class="cert-image rv" type="button" onclick="openEduImage(this)" aria-label="View certificate 5">
+          <img class="edu-source-image" src="./image/Image 2026-11-27 at 4.00.43 PM.jpeg" alt="Training certificate 5">
+          <span class="cert-logo-preview"><i class="fa-solid fa-medal"></i></span>
+          <div class="cert-overlay">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>View Certificate</span>
+          </div>
+          <span class="cert-caption">Certificate 05</span>
+        </button>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Image Preview -->
+<div class="edu-lightbox" id="eduLightbox" role="dialog" aria-modal="true" aria-label="Image preview" onclick="closeEduImage()">
+  <button class="lightbox-close" type="button" aria-label="Close image preview" onclick="closeEduImage()">&times;</button>
+  <img id="eduLightboxImage" src="" alt="Preview" onclick="event.stopPropagation()">
+</div>
 
 <!-- ═══════════════ CONTACT ═══════════════ -->
 <section id="contact">

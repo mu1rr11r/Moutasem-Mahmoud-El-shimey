@@ -129,3 +129,34 @@ function sendMsg() {
   document.getElementById('formWrap').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
+
+
+function openEduImage(element) {
+  const image = element.querySelector("img");
+  const lightbox = document.getElementById("eduLightbox");
+  const preview = document.getElementById("eduLightboxImage");
+
+  lightbox.dataset.trigger = "education";
+  lightbox._trigger = element;
+  preview.src = image.currentSrc || image.src;
+  preview.alt = image.alt;
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+  lightbox.querySelector(".lightbox-close").focus();
+}
+
+function closeEduImage() {
+  const lightbox = document.getElementById("eduLightbox");
+  if (!lightbox.classList.contains("active")) return;
+  const trigger = lightbox._trigger;
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+  document.getElementById("eduLightboxImage").src = "";
+  if (trigger) trigger.focus();
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeEduImage();
+  }
+});
